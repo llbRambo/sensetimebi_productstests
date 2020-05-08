@@ -5,7 +5,7 @@ import sys
 import time
 import datetime
 import sys
-from PassctestScripts.Scripts.Sharedscript.SharedSOCKET import Socket
+from BI_SensePassC.Scripts.Sharedscript.SharedSOCKET import Socket
 
 def relay_test(ip, port, open, send, get_postback, close):
     print(ip)        

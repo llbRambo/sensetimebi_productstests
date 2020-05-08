@@ -1,8 +1,8 @@
 #coding=utf-8
 import paramiko
 import time
-from PassctestScripts.Scripts.Sharedscript.ShareedSSH import SSH
-from PassctestScripts.Scripts.Sharedscript.SharedGetYamlConfigData import DataGetConfig
+from BI_SensePassC.Scripts.Sharedscript.ShareedSSH import SSH
+from BI_SensePassC.Scripts.Sharedscript.SharedGetYamlConfigData import DataGetConfig
 
 if __name__ == '__main__':
     yamlconfig_obj = DataGetConfig()
