@@ -1,0 +1,27 @@
+#设备IP地址
+Host_IP: 192.168.1.100
+#SSH登陆账号
+SSH_Name: root
+#SSH登陆密码
+SSH_Password: BI_SensePassC#
+#SSH端口号
+SSH_Port: 22
+
+# 音频录制（测试mic）
+audio_record_pathway: source /etc/profile; ubus call audio_recorder config '{"file":"/data/zql.aac"}'
+
+set_audio_record_volume: source /etc/profile; ubus call audio_recorder set_volume '{"volume":30}'
+
+audio_record_start: source /etc/profile; ubus call audio_recorder start '{}'
+
+audio_record_stop: source /etc/profile; ubus call audio_recorder stop '{}'
+
+
+# 音频播放（测试播放器）
+audio_play_pathway: source /etc/profile; ubus call audio_player config '{"file":"/data/zql.aac"}'
+
+set_audio_player_volume: source /etc/profile; ubus call audio_player set_volume '{"volume":100}'
+
+auido_play_start: source /etc/profile; ubus call audio_player start '{}'
+
+audio_play_stop: source /etc/profile; ubus call audio_player flush '{}'

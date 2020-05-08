@@ -1,0 +1,99 @@
+2020-04-12 12:31:38	add com = COM7
+2020-04-12 12:33:29	open COM7 success!
+2020-04-12 12:33:29	create the recv thread, and start recv thd rs485 data......
+2020-04-12 12:37:06	recv the rs485 data, length = 8
+2020-04-12 12:37:08	send the data success!
+2020-04-12 12:37:15	recv the rs485 data, length = 8
+2020-04-12 12:37:17	send the data success!
+2020-04-12 12:37:25	recv the rs485 data, length = 8
+2020-04-12 12:37:27	send the data success!
+2020-04-12 12:37:34	recv the rs485 data, length = 8
+2020-04-12 12:37:36	send the data success!
+2020-04-12 12:42:07	recv the rs485 data, length = 8
+2020-04-12 12:42:09	send the data success!
+2020-04-12 12:46:17	recv the rs485 data, length = 8
+2020-04-12 12:46:19	send the data success!
+2020-04-12 12:46:26	recv the rs485 data, length = 8
+2020-04-12 12:46:28	send the data success!
+2020-04-12 12:46:36	recv the rs485 data, length = 8
+2020-04-12 12:46:38	send the data success!
+2020-04-12 12:51:39	recv the rs485 data, length = 8
+2020-04-12 12:51:41	send the data success!
+2020-04-12 12:51:48	recv the rs485 data, length = 8
+2020-04-12 12:51:50	send the data success!
+2020-04-12 12:51:58	recv the rs485 data, length = 8
+2020-04-12 12:52:00	send the data success!
+2020-04-12 12:54:29	recv the rs485 data, length = 8
+2020-04-12 12:54:32	send the data success!
+2020-04-12 12:54:39	recv the rs485 data, length = 8
+2020-04-12 12:54:41	send the data success!
+2020-04-12 12:54:49	recv the rs485 data, length = 8
+2020-04-12 12:54:51	send the data success!
+2020-04-12 12:57:00	recv the rs485 data, length = 8
+2020-04-12 12:57:02	send the data success!
+2020-04-12 12:57:10	recv the rs485 data, length = 8
+2020-04-12 12:57:12	send the data success!
+2020-04-12 12:57:19	recv the rs485 data, length = 8
+2020-04-12 12:57:21	send the data success!
+2020-04-12 13:10:03	recv the rs485 data, length = 8
+2020-04-12 13:10:05	send the data success!
+2020-04-12 13:10:09	recv the rs485 data, length = 8
+2020-04-12 13:10:11	send the data success!
+2020-04-12 13:10:15	recv the rs485 data, length = 8
+2020-04-12 13:10:17	send the data success!
+2020-04-12 13:14:03	recv the rs485 data, length = 8
+2020-04-12 13:14:05	send the data success!
+2020-04-12 13:14:11	recv the rs485 data, length = 8
+2020-04-12 13:14:14	send the data success!
+2020-04-12 13:14:20	recv the rs485 data, length = 8
+2020-04-12 13:14:22	send the data success!
+2020-04-12 13:15:00	recv the rs485 data, length = 8
+2020-04-12 13:15:02	send the data success!
+2020-04-12 13:26:22	recv the rs485 data, length = 8
+2020-04-12 13:26:24	send the data success!
+2020-04-12 13:26:25	recv the rs485 data, length = 8
+2020-04-12 13:26:27	send the data success!
+2020-04-12 13:26:28	recv the rs485 data, length = 8
+2020-04-12 13:26:30	send the data success!
+2020-04-12 13:27:27	recv the rs485 data, length = 8
+2020-04-12 13:27:29	send the data success!
+2020-04-12 13:27:30	recv the rs485 data, length = 8
+2020-04-12 13:27:32	send the data success!
+2020-04-12 13:27:33	recv the rs485 data, length = 8
+2020-04-12 13:27:35	send the data success!
+2020-04-12 13:28:17	recv the rs485 data, length = 8
+2020-04-12 13:28:19	send the data success!
+2020-04-12 13:28:20	recv the rs485 data, length = 8
+2020-04-12 13:28:22	send the data success!
+2020-04-12 13:28:23	recv the rs485 data, length = 8
+2020-04-12 13:28:25	send the data success!
+2020-04-12 13:28:51	recv the rs485 data, length = 8
+2020-04-12 13:28:53	send the data success!
+2020-04-12 13:28:58	recv the rs485 data, length = 8
+2020-04-12 13:29:00	send the data success!
+2020-04-12 13:29:04	recv the rs485 data, length = 8
+2020-04-12 13:29:06	send the data success!
+2020-04-12 13:30:16	recv the rs485 data, length = 8
+2020-04-12 13:30:18	send the data success!
+2020-04-12 13:30:19	recv the rs485 data, length = 8
+2020-04-12 13:30:21	send the data success!
+2020-04-12 13:30:22	recv the rs485 data, length = 8
+2020-04-12 13:30:24	send the data success!
+2020-04-12 13:32:25	recv the rs485 data, length = 8
+2020-04-12 13:32:27	send the data success!
+2020-04-12 13:32:29	recv the rs485 data, length = 8
+2020-04-12 13:32:31	send the data success!
+2020-04-12 13:32:32	recv the rs485 data, length = 8
+2020-04-12 13:32:34	send the data success!
+2020-04-12 13:32:53	recv the rs485 data, length = 8
+2020-04-12 13:32:55	send the data success!
+2020-04-12 13:32:56	recv the rs485 data, length = 8
+2020-04-12 13:32:58	send the data success!
+2020-04-12 13:32:59	recv the rs485 data, length = 8
+2020-04-12 13:33:01	send the data success!
+2020-04-12 13:34:24	recv the rs485 data, length = 8
+2020-04-12 13:34:26	send the data success!
+2020-04-12 13:34:30	recv the rs485 data, length = 8
+2020-04-12 13:34:32	send the data success!
+2020-04-12 13:34:36	recv the rs485 data, length = 8
+2020-04-12 13:34:38	send the data success!

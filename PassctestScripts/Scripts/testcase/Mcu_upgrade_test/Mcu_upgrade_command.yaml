@@ -1,0 +1,22 @@
+#设备IP地址
+Host_IP: 192.168.1.100
+#SSH登陆账号
+SSH_Name: root
+#SSH登陆密码
+SSH_Password: BI_SensePassC#
+#SSH端口号
+SSH_Port: 22
+#按照顺序需要执行的命令
+#给mcu_reboot.sh赋予权限
+Command1: chmod 777 /data/mcu_reboot.sh
+#创建并且写入0给record.txt文件
+Command2: echo 0 > /data/record.txt
+#把v1.4版本的mcu版本重命名为v1.5版本
+Command3: mv /lib/firmware/stm8003f3_sensepassc_v1.4.bin /lib/firmware/stm8003f3_sensepassc_v1.5.bin
+#把mcu升级配置文件中的v1.4改成v1.5
+Command4: sed -i 's/v1.4/v1.5/g' /lib/firmware/mcu_upgrade_config.txt
+#在network_cfg文件中的第22行添加在后台运行mcu_reboot.sh的指令
+Command5: sed -i "22i ./data/mcu_reboot.sh &" /etc/init.d/network_cfg
+#重启设备
+Command6: reboot -f
+
