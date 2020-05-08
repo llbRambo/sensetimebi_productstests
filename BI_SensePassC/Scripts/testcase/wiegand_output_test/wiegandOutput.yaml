@@ -1,0 +1,18 @@
+#设备IP地址
+Host_IP: 192.168.1.100
+#SSH登陆账号
+SSH_Name: root
+#SSH登陆密码
+SSH_Password: BI_SensePassC#
+#SSH端口号
+SSH_Port: 22
+
+
+#接口详情请参见：https://confluence.sensetime.com/pages/viewpage.action?pageId=135896292
+#按照顺序需要执行的命令
+#打开韦根写/rfid
+open_card_cmd: source /etc/profile; ubus call device.card open '{"type":0,"mode":1,"name":"device.card.1920","method":"callback"}'
+#发送数据
+write_data_cmd: source /etc/profile; ubus call device.card write '{"type":0,"number":123456}'
+#关闭韦根写
+close_card_cmd: source /etc/profile; ubus call device.card close '{"type":0}'
