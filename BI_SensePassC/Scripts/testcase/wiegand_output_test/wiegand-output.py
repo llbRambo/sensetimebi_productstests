@@ -33,7 +33,9 @@ if __name__ == '__main__':
         # print(yamlConfig.get('write_data_cmd'))
         ssh_obj.send_data(yamlConfig.get('close_card_cmd'))
         # print(yamlConfig.get('close_card_cmd'))
+        time.sleep(6)
         ssh_obj.disconnect()
+
         # os._exit()
         
 
