@@ -1,10 +1,10 @@
 #!/usr/bin/python
 #coding=utf-8
-from BI_SensePassC.Scripts.Sharedscript.ShareedSSH import SSH
-from BI_SensePassC.Scripts.Sharedscript.SharedGetYamlConfigData import DataGetConfig
-from BI_SensePassC.Scripts.Sharedscript.SharedSerial import switch_control
-from BI_SensePassC.Scripts.Sharedscript.SharedSerial import Serial
-from BI_SensePassC.Scripts.Sharedscript.SharedSerial import Ser_Contrl
+from sensetimebi_productstests.Sharedscript.ShareedSSH import SSH
+from sensetimebi_productstests.Sharedscript.SharedGetYamlConfigData import DataGetConfig
+from sensetimebi_productstests.Sharedscript.SharedSerial import switch_control
+from sensetimebi_productstests.Sharedscript.SharedSerial import Serial
+from sensetimebi_productstests.Sharedscript.SharedSerial import Ser_Contrl
 import time
 import random
 

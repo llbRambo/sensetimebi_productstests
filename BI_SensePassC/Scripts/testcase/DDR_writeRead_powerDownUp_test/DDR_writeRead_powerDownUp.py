@@ -2,9 +2,9 @@
 #coding=utf-8
 import os
 import sys
-from BI_SensePassC.Scripts.Sharedscript.ShareedSSH import SSH
-from BI_SensePassC.Scripts.Sharedscript.ShareedSSH import SCP
-from BI_SensePassC.Scripts.Sharedscript.SharedGetYamlConfigData import DataGetConfig
+from sensetimebi_productstests.Sharedscript.ShareedSSH import SSH
+from sensetimebi_productstests.Sharedscript.ShareedSSH import SCP
+from sensetimebi_productstests.Sharedscript.SharedGetYamlConfigData import DataGetConfig
 
 if __name__ == '__main__':
 

@@ -1,7 +1,0 @@
-2020-04-11 17:05:36	add com = COM3
-2020-04-11 17:05:36	add com = COM3
-2020-04-11 17:05:36	add com = COM7
-2020-04-11 17:05:45	open COM7 success!
-2020-04-11 17:05:45	create the recv thread, and start recv thd rs485 data......
-2020-04-11 17:10:59	stop thread success!
-2020-04-11 17:10:59	close uart success!
