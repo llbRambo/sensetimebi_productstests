@@ -1,5 +1,5 @@
 #设备IP地址
-Host_IP: 192.168.1.100
+Host_IP: 10.9.40.70
 #SSH登陆账号
 SSH_Name: root
 #SSH登陆密码
