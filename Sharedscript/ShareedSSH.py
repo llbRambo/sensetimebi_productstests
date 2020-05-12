@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
+import sys
 
 import paramiko
 from scp import SCPClient
@@ -87,14 +88,31 @@ class SCP(SSH):
         print("file " + str(local_file) + " to " + str(remote_path) + "  upload  successfully.")
         self.disconnect()
 
-    # 把本地某个指定路径下的所有文件上传到远程主机指定路径
-    def Files_upload(self, local_path, remote_path):
+    # 把远程主机上的文件传送到本地
+    def singFile_download(self, filename, remote_path, local_path):
         self.connects()
         _scp = SCPClient(self.ssh_client.get_transport(), socket_timeout=30.0)
-        _scp.put(local_path, remote_path)
-        print("info:  upload files successfully！")
+        remote_file = str(remote_path) + '/' + str(filename)
+        _scp.get(remote_file, local_path)
+        print("file " + str(remote_file) + " to " + str(local_path) + "  download  successfully.")
         self.disconnect()
+
+    # # 把本地某个指定路径下的所有文件上传到远程主机指定路径
+    # def Files_upload(self, local_path, remote_path):
+    #     self.connects()
+    #     _scp = SCPClient(self.ssh_client.get_transport(), socket_timeout=30.0)
+    #     _scp.put(local_path, remote_path)
+    #     print("info:  upload files successfully！")
+    #     self.disconnect()
 
     def modify_path(self, remote_path, local_path):
         self.__remote_path = remote_path
         self.__local_path = local_path
+
+
+if __name__ == '__main__':
+    scp = SCP('10.9.40.70', 22, 'root', 'BI_SensePassC#')
+    filename = 'mcu_tools.txt'
+    localpath = sys.path[0]
+    remotepath = '/data'
+    scp.singFile_download(filename, remotepath, localpath)

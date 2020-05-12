@@ -1,9 +1,0 @@
-2020-05-11 14:23:14	add com = COM1
-2020-05-11 14:23:14	add com = COM21
-2020-05-11 14:23:14	add com = COM25
-2020-05-11 14:23:17	open COM25 success!
-2020-05-11 14:23:17	create the recv thread, and start recv thd rs485 data......
-2020-05-11 14:23:31	recv the rs485 data, length = 8
-2020-05-11 14:23:33	send the data success!
-2020-05-11 14:43:27	stop thread success!
-2020-05-11 14:43:27	close uart success!
