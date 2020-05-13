@@ -2,9 +2,7 @@
 #coding=utf-8
 from sensetimebi_productstests.Sharedscript.ShareedSSH import SSH
 from sensetimebi_productstests.Sharedscript.SharedGetYamlConfigData import DataGetConfig
-from sensetimebi_productstests.Sharedscript.SharedSerial import switch_control
-from sensetimebi_productstests.Sharedscript.SharedSerial import Serial
-from sensetimebi_productstests.Sharedscript.SharedSerial import SerContrl
+from sensetimebi_productstests.Sharedscript.SharedSerial import SingleRelay
 import time
 import random
 
@@ -22,7 +20,7 @@ if __name__ == '__main__':
     com1 = yamlConfig.get('Command1')
     testMax = 10000
     ssh_obj = SSH(host_ip, ssh_port, ssh_name, ssh_pwd)
-    ser = SerContrl('com7', 9600)
+    ser = SingleRelay('com26', 9600)
     for i in range(1, testMax+1):
         print('————————test No.%s'%i)
 

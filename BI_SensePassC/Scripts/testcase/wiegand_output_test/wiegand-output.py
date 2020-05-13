@@ -23,20 +23,14 @@ if __name__ == '__main__':
     # print(ssh_port)
 
     ssh_obj = SSH(host_ip, ssh_port, ssh_name, ssh_pwd)
-    for i in range(1,100001):
+    ssh_obj.connects()
+    open_card_info = ssh_obj.send_data(yamlConfig.get('open_card_cmd'))
+    for i in range(1, 100001):
         print('————————test %s'%i)
-        ssh_obj.connects()
         # 按照顺序执行wiegandOutput.yaml文件中的命令
-        open_card_info = ssh_obj.send_data(yamlConfig.get('open_card_cmd'))
-        # print(yamlConfig.get('open_card_cmd'))
         ssh_obj.send_data(yamlConfig['write_data_cmd'])
-        # print(yamlConfig.get('write_data_cmd'))
-        ssh_obj.send_data(yamlConfig.get('close_card_cmd'))
-        # print(yamlConfig.get('close_card_cmd'))
-        time.sleep(6)
-        ssh_obj.disconnect()
-
-        # os._exit()
+    ssh_obj.send_data(yamlConfig.get('close_card_cmd'))
+    ssh_obj.disconnect()
         
 
         
