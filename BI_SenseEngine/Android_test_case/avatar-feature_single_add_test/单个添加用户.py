@@ -8,6 +8,6 @@ if __name__ == '__main__':
     D.check_Report_switch()
     D.into_preview()
     D.delete_all()
-    for i in range(1, test_max+1):
+    for i in range(9811, test_max+1):
         D.log.logger.debug("----------test_%s----------" % i)
         D.add_an_user(str(i))

@@ -25,10 +25,11 @@ if __name__ == '__main__':
     ssh_obj = SSH(host_ip, ssh_port, ssh_name, ssh_pwd)
     ssh_obj.connects()
     open_card_info = ssh_obj.send_data(yamlConfig.get('open_card_cmd'))
-    for i in range(1, 100001):
+    for i in range(1, 100000):
         print('————————test %s'%i)
         # 按照顺序执行wiegandOutput.yaml文件中的命令
         ssh_obj.send_data(yamlConfig['write_data_cmd'])
+        time.sleep(1)
     ssh_obj.send_data(yamlConfig.get('close_card_cmd'))
     ssh_obj.disconnect()
         
