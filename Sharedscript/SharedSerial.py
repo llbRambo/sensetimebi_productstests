@@ -58,25 +58,6 @@ class SingleRelay(SerContrl):
         return times
 
 
-#
-#
-# class switch_control(Serial):
-#     def __init__(self, port, baud):
-#         Serial.__init__(self, port, baud)
-#         # self.__delay_time = 3
-#         # self.__key_value = "0"
-#         # self.__default = "0"
-#         # self.__key_press_time = 1
-#     def switch_on(self, delay_time):
-#         on = "\xA0\x01\x01\xA2"
-#         off = "\xA0\x01\x00\xA1"
-#         self.__delay_time = delay_time
-#         # self.__serial_obj.open_port()
-#         self.__serial_obj.write_data(on)
-#         time.sleep(self.__delay_time)
-#         self.__serial_obj.write_data(off)
-#         time.sleep(3)
-#
 if __name__ == '__main__':
     relay = SingleRelay('com31', 9600)
     relay.disconnect_power()
