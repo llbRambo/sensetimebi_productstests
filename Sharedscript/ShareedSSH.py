@@ -53,7 +53,7 @@ class SSH(object):
         print('command: %s'%command)
         stdin, stdout, stderr = self.ssh_client.exec_command(command, bufsize=1024, timeout=10)
         #print('指令执行结果： ', stdout.read().decode('utf-8'))
-        return stdout #.read().decode('utf-8')
+        return stdout.read().decode('utf-8')
 
     def send_and_recv(self, command):
         shell = self.ssh_client.invoke_shell()
