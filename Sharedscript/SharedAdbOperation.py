@@ -7,10 +7,8 @@ class AdbOpt(object):
     def __init__(self, AndroidDevice):
         self.__AndroidDevice = AndroidDevice
 
-
     def find_apk(self, f_packagename):
-        pm_list_cmd = 'adb -s ' + self.__AndroidDevice + ' shell pm list packages'
-        info = os.popen(pm_list_cmd).read()
+        info = os.popen('adb -s %s shell pm list packages'%self.__AndroidDevice).read()
         print(info)
         flag = info.find(f_packagename)
         if flag != -1:
@@ -19,8 +17,7 @@ class AdbOpt(object):
             return False
 
     def uninstall_apk(self, u_packagename):
-        pm_uninstall_cmd = 'adb -s ' + self.__AndroidDevice + ' shell pm uninstall ' + u_packagename
-        info = os.popen(pm_uninstall_cmd).read()
+        info = os.popen('adb -s %s shell pm uninstall %s'%(self.__AndroidDevice, u_packagename)).read()
         print(info)
         flag = self.find_apk(u_packagename)
         if flag != -1:
@@ -30,16 +27,11 @@ class AdbOpt(object):
             print('apk 卸载成功！！！')
             return False
 
-    def adb_screencap(self, screenshotname, Storagepath):
-        screencap_cmd = 'adb -s ' + self.__AndroidDevice + ' shell  screencap -p /sdcard/' + str(screenshotname) + '.png'
-        os.popen(screencap_cmd)  #开始截取屏幕图片
+    def adb_screencap(self, screenshotname, StoragePath):
+        os.popen('adb -s %s shell screencap -p /sdcard/%s.png'%(self.__AndroidDevice, str(screenshotname)))    #开始截取屏幕图片
         time.sleep(2)
-        adb_pull_cmd = 'adb -s ' + self.__AndroidDevice + ' pull /sdcard/' + str(screenshotname) + '.png  ' + str(Storagepath)
-        os.popen(adb_pull_cmd)   #把截取图片导到电脑指定文件夹里
+        os.popen('adb -s %s pull /sdcard/%s.png %s' % (self.__AndroidDevice, str(screenshotname), str(StoragePath)))   #把截取图片导到电脑指定文件夹里
         time.sleep(2)
-        adb_delete_screenshot_cmd = 'adb -s ' + self.__AndroidDevice + ' shell rm -rf /sdcard/' + str(screenshotname) + '.png  '
-        os.popen(adb_delete_screenshot_cmd)  #图片导完之后，删除设备端图片，防止设备端空间不足
+        os.popen('adb -s %s shell rm -rf /sdcard/%s.png'%(self.__AndroidDevice, str(screenshotname)))  #图片导完之后，删除设备端图片，防止设备端空间不足
         time.sleep(2)
-
-
 

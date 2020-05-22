@@ -5,22 +5,27 @@ import re
 import time
 import sys
 from sensetimebi_productstests.Sharedscript.logger import Logger
-from sensetimebi_productstests.Sharedscript.File_operations import File_operations
 
 class SenseEngineCameraDemoDebugApk(object):
 
-    def __init__(self, ipport, resultname):
-        self.result_files = File_operations() #实例化文件操作对象，用于测试结果log文件的操作
-        self.d = u2.connect_adb_wifi(ipport) #连接安卓设备
-        path = self.result_files.create_file(resultname, 'log') #在当前路径下创建测试结果文件夹，用于存放测试结果log
-        filepath = path + time.strftime('%y%m%d_%H%M%S') + '.txt' #创建测试结果日志文件名字
-        self.log = Logger(filepath, level='debug') #将测试日志写入日志文件
-        self.success_count = 0
-        self.fail_count = 0
-        self.ipport = ipport
+    def __init__(self, ipport, LogStorageAddress):
+        #类内参数赋值
+        self.__success_count = 0
+        self.__fail_count = 0
+        self.__ipport = ipport
+        self.__LogStorageAddress = LogStorageAddress
+
+        #创建log文件，并且将log写入文件
+        self.filepath = self.__LogStorageAddress + time.strftime('%y%m%d_%H%M%S') + '.txt' #创建测试结果日志文件名字
+        self.log = Logger(self.filepath, level='debug') #将测试日志写入日志文件
+
+        #对安卓设备进行连接
+        self.d = u2.connect_adb_wifi(self.__ipport)  # 连接安卓设备
+
+
 
     def init_devices(self):
-        return u2.connect_adb_wifi(self.ipport)
+        return u2.connect_adb_wifi(self.__ipport)
 
     def screen_img(self, img_path, img_name):
         self.d.screenshot(img_path + img_name) #截取设备所在界面的图片
@@ -35,9 +40,9 @@ class SenseEngineCameraDemoDebugApk(object):
         time.sleep(2)
 
     #根据apk名来停止apk
-    def stop_app(self, appName, cmdStr):
+    def stop_app(self, appName):
         # 检查上位机是否存在，如果存在，则杀掉
-        info = os.popen(cmdStr).read()
+        info = os.popen('adb -s %s shell ps ' % self.__ipport).read()
         # print('info')
         # print(info)
         flag = info.find(appName)
@@ -185,53 +190,16 @@ class SenseEngineCameraDemoDebugApk(object):
         try:
             self.d(text="执行成功: 1000 执行失败: 0").exists(6*60)  # 等待文件上传成功
             self.d(resourceId="com.sensetime.demo:id/md_buttonDefaultPositive").click()  # 点击确认
-            self.success_count += 1
-            self.log.logger.debug("----------添加成功----------%s"%self.success_count)
+            self.__success_count += 1
+            self.log.logger.debug("----------添加成功----------%s" % self.__success_count)
         except:
-            self.fail_count+=1
-            self.log.logger.debug("----------添加失败----------%s"%self.fail_count)
+            self.__fail_count+=1
+            self.log.logger.debug("----------添加失败----------%s" % self.__fail_count)
             self.screen_img(img_path, img_name)
             self.d(resourceId="com.sensetime.demo:id/md_buttonDefaultPositive").click()  # 点击确认
         time.sleep(1)
         self.back_button()
         time.sleep(2)
-
-    # bin文件升级
-    def bin_upgrade(self, i, img_path, img_name, bin_name, upgrade_need_time):
-        '''固件升级'''
-        self.log.logger.debug("---------固件升级----------test %s" % i)
-        self.setting()
-        self.d(resourceId="com.sensetime.demo:id/setting_upgrade_firmware_btn").click()  # 升级固件
-        time.sleep(0.5)
-        if self.d(text=bin_name).exists():
-            self.d.xpath('//*[@text="' + bin_name + '"]').click()  # 升级固件
-        else:
-            self.log.logger.debug("---------找不到升级文件----------")
-            exit(1)
-        self.d(resourceId="com.sensetime.demo:id/md_buttonDefaultPositive").click()  # 点击确认
-        time.sleep(upgrade_need_time)
-        try:
-            self.d(text="执行成功,设备将重启,稍等1分钟,杀掉整个应用进程，然后请重新去启动应用").exists(150)  # 等待文件上传成功  # 等待文件上传成功
-            time.sleep(1)
-            self.d(resourceId="com.sensetime.demo:id/md_buttonDefaultPositive").click()  # 点击确认
-            self.log.logger.debug("---------升级成功----------")
-        except:
-            self.log.logger.debug("---------升级失败----------")
-            self.screen_img(img_path, img_name)
-            self.d(resourceId="com.sensetime.demo:id/md_buttonDefaultPositive").click()  # 点击确认
-        time.sleep(100)  # 等待设备启动
-        # 检查上位机是否存在，如果存在，则杀掉
-        target_str = 'com.sensetime.demo'
-        info = os.popen('adb -s 10.9.40.22:8888 shell ps ').read()
-        # print('info')
-        # print(info)
-        flag = info.find(target_str)
-        # print('flag: ', flag)
-        if flag != -1:
-            self.log.logger.debug('进程存在，杀掉进程！！！')
-            self.stop_app()  # 杀掉上位机
-        else:
-            self.log.logger.debug('进程不存在！！！')
 
 
     #统计bin文件传输时间
@@ -242,11 +210,11 @@ class SenseEngineCameraDemoDebugApk(object):
         self.setting()
         self.d(resourceId="com.sensetime.demo:id/setting_upgrade_firmware_btn").click()  # 升级固件
         time.sleep(0.5)
-        if self.d(text=bin_name).exists():
+        if self.d(text=bin_name).exists():    #检测所选软件版本是否为目标版本
             self.d.xpath('//*[@text="' + bin_name + '"]').click()  # 升级固件
             self.log.logger.debug("当前选择固件为：%s" % bin_name)
         else:
-            self.log.logger.debug("---------找不到升级文件----------")
+            self.log.logger.debug("---------找不到目标升级文件----------")
             exit(1)
         time.sleep(0.5)
         self.d(resourceId="com.sensetime.demo:id/md_buttonDefaultPositive").click()  # 点击确认
@@ -270,8 +238,7 @@ class SenseEngineCameraDemoDebugApk(object):
         time.sleep(100) #等待设备启动
         #如果上位机仍然存在，在下次测试之前需要杀掉上位机
         appName = 'com.sensetime.demo'
-        cmd_command = 'adb -s ' + self.ipport + ' shell ps '
-        self.stop_app(appName, cmd_command)  # 杀掉上位机
+        self.stop_app(appName)  # 杀掉上位机
 
 
     def get_feature(self,id):

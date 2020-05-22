@@ -111,7 +111,7 @@ class SCP(SSH):
 
 
 if __name__ == '__main__':
-    scp = SCP('10.9.40.70', 22, 'root', 'BI_SensePassC#')
+    scp = SCP('10.9.40.70', 22, 'root', 'BI_Hisi_SensePassC#')
     filename = 'mcu_tools.txt'
     localpath = sys.path[0]
     remotepath = '/data'

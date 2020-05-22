@@ -19,11 +19,11 @@ class Xllgoinfo(object):
         ws = self.ws
         ws.append(strings)
         filename = self.dest_filename
-        #wb.save(str(sys.path[0])+'\\'+ 'Result_file_xlsx' + '\\' +'%s' % filename)
+        #wb.save(str(sys.__path[0])+'\\'+ 'Result_file_xlsx' + '\\' +'%s' % filename)
         wb.save(sys.path[0]+ "\\Result_file_xlsx\\"+'%s' % filename)
         print((str(sys.path[0])+'\\'+ 'Result_file_xlsx' + '\\' +'%s' % filename))
-        #print((str(sys.path)))
-        #(str(sys.path[0]) + '\\' + 'Result_file' + '\\' + gettime)
+        #print((str(sys.__path)))
+        #(str(sys.__path[0]) + '\\' + 'Result_file' + '\\' + gettime)
 
 if __name__ == '__main__':
     xinfo = Xllgoinfo("中国")

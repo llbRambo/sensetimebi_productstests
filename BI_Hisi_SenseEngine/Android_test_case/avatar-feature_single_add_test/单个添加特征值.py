@@ -1,5 +1,5 @@
 #-- coding: utf-8 --
-from sensetimebi_productstests.BI_SenseEngine.Android_test_case.AndroidShareScripts.pages import SenseEngineCameraDemoDebugApk
+from sensetimebi_productstests.BI_Hisi_SenseEngine.Android_test_case.AndroidShareScripts.pages import SenseEngineCameraDemoDebugApk
 
 if __name__ == '__main__':
     ip = "10.9.40.51:8888"

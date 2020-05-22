@@ -6,12 +6,12 @@ from sensetimebi_productstests.Sharedscript.SharedGetYamlConfigData import DataG
 from M20.pages.Command import Command
 
 class File_operations(object):
-    # def __init__(self,resultname):
+    # def __init__(self,__testResultFolderName):
     #     '''
     #     创建文件
     #
     #     '''
-    #     self.xinfo = Xllgoinfo(resultname)
+    #     self.xinfo = Xllgoinfo(__testResultFolderName)
     #     self.getConfig = DataGetConfig()
 
     def get_filenames(self,path):
@@ -32,9 +32,22 @@ class File_operations(object):
         return names
 
     #创建文件夹
+    def create_floder(self, flodername, SpecifyPath=sys.path[0]):   #默认在脚本当前目录下创建文件夹
+        filepath = str(SpecifyPath) + '\\' + str(flodername) + '\\'
+        folder = os.path.exists(filepath)
+        if not folder:  # 判断是否存在文件夹如果不存在则创建为文件夹
+            print("---  创建新的文件夹...  ---")
+            os.makedirs(filepath)  # makedirs 创建文件时如果路径不存在会创建这个路径
+            print("---  OK  ---")
+        else:
+            print("---  文件夹已存在!  ---")
+        return filepath
+
+    # 创建文件
     def create_file(self, flodername, filename):
-        #gettime = time.strftime('%Y-%m-%d', time.gmtime())  # 获得当前时间的列表
-        filepath = str(sys.path[0]) + '\\' + str(flodername) + '\\' + str(filename)
+        # gettime = time.strftime('%Y-%m-%d', time.gmtime())  # 获得当前时间的列表
+        gettime = time.strftime('%Y-%m-%d', time.gmtime())  # 获得当前时间的列表
+        filepath = str(sys.path[0]) + '\\' + str(flodername) + '\\' + str(gettime) + str(filename)
         folder = os.path.exists(filepath)
         if not folder:  # 判断是否存在文件夹如果不存在则创建为文件夹
             print("---  创建新的文件...  ---")
@@ -43,6 +56,7 @@ class File_operations(object):
         else:
             print("---  文件已存在!  ---")
         return filepath
+
 
     def window_capture(self,filename):
         """
@@ -107,7 +121,7 @@ class File_operations(object):
         # 原始图片路径
         inames = self.imagesName(firstName)
         len(inames)
-        # path = 'E:\新建文件夹'
+        # __path = 'E:\新建文件夹'
         # 获取该路径下所有图片
         fileList = os.listdir(img_path)
         #print(filelist)

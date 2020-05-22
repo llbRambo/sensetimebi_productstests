@@ -44,7 +44,7 @@ class images_dispose(object):
         # 原始图片路径
         inames = self.imagesName(firstName)
         len(inames)
-        # path = 'E:\新建文件夹'
+        # __path = 'E:\新建文件夹'
         # 获取该路径下所有图片
         fileList = os.listdir(self.images_path)
         # print(filelist)
