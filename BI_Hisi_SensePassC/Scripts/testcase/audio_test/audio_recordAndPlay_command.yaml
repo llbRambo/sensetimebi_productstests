@@ -3,7 +3,7 @@ Host_IP: 192.168.1.100
 #SSH登陆账号
 SSH_Name: root
 #SSH登陆密码
-SSH_Password: BI_SensePassC#
+SSH_Password: BI_Hisi_SensePassC#
 #SSH端口号
 SSH_Port: 22
 

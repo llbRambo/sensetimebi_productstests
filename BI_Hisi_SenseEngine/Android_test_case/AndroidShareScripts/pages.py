@@ -65,6 +65,22 @@ class SenseEngineCameraDemoDebugApk(object):
         self.d(resourceId="com.android.systemui:id/back").click()
         time.sleep(1)
 
+    def close_initiative_upload(self):
+        '''
+        检查识别数据上报模式，关闭主动上报
+        :return:
+        '''
+        self.d(resourceId="com.sensetime.demo:id/choose_upload_mode").click()
+        time.sleep(2)
+        if self.d(text="主动上报 开启").exists():
+            self.d(resourceId="com.sensetime.demo:id/switch_initiative_upload").click()
+            time.sleep(0.5)
+            self.d(resourceId="com.sensetime.demo:id/md_buttonDefaultPositive").click()
+        # elif self.d(text="帧数据携带人脸识别数据 开启").exists():
+        #     time.sleep(0.5)
+        #     self.d(resourceId="com.sensetime.demo:id/md_buttonDefaultPositive").click()
+
+
     def check_Report_switch(self):
         '''
         检查识别数据上报模式，确认帧数开关打开
@@ -79,6 +95,7 @@ class SenseEngineCameraDemoDebugApk(object):
         elif self.d(text="帧数据携带人脸识别数据 开启").exists():
             time.sleep(0.5)
             self.d(resourceId="com.sensetime.demo:id/md_buttonDefaultPositive").click()
+
     #进入预览界面
     def into_preview(self):
         self.d(resourceId="com.sensetime.demo:id/entry_cam_btn").click()
@@ -259,7 +276,12 @@ class SenseEngineCameraDemoDebugApk(object):
         self.d(resourceId="com.sensetime.demo:id/add_features_btn").click()
         time.sleep(0.5)
         self.d(resourceId="android:id/input").set_text(id)  # 输入ID
-        self.d(resourceId="com.sensetime.demo:id/md_buttonDefaultPositive").click()
+        time.sleep(1)
+        add_feature_flag = False
+        while add_feature_flag != True:
+            add_feature_flag = self.d(text="请确保你已经获取到了特征值").exists(10)
+            if add_feature_flag:
+                self.d(resourceId="com.sensetime.demo:id/md_buttonDefaultPositive").click()
         time.sleep(1)
         self.back_button() #点击
         time.sleep(2)

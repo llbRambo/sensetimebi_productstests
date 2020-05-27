@@ -35,3 +35,7 @@ class AdbOpt(object):
         os.popen('adb -s %s shell rm -rf /sdcard/%s.png'%(self.__AndroidDevice, str(screenshotname)))  #图片导完之后，删除设备端图片，防止设备端空间不足
         time.sleep(2)
 
+    def adb_rm_files(self, filesdir):
+        os.popen('adb -s %s shell rm -rf %s'%(self.__AndroidDevice, str(filesdir)))
+        time.sleep(2)
+

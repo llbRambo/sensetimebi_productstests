@@ -8,7 +8,6 @@ class AdbOpt(object):
     def __init__(self, AndroidDevice):
         self.__AndroidDevice = AndroidDevice
 
-
     def find_apk(self, f_packagename):
         pm_list_cmd = 'adb -s ' + self.__AndroidDevice + ' shell pm list packages'
         info = os.popen(pm_list_cmd).read()
@@ -36,7 +35,7 @@ class AdbOpt(object):
 if __name__ == '__main__':
     ipport = '10.9.40.79:8888'
     packagename = 'com.sensetime.bi.powerondemo'
-    for i in range(1,101):
+    for i in range(1,2):
         print('——————test：%s——————'%i)
         adb = AdbOpt(ipport)
         d = u2.connect_adb_wifi(ipport)  # 连接安卓设备
@@ -54,14 +53,14 @@ if __name__ == '__main__':
         adb.uninstall_apk(packagename)
         time.sleep(5)
 
-        #Rom ota接口测试
-        d(resourceId="com.example.haerbinmetrodemo:id/button2").click() # 点击“确认升级ROM” ，设备升级会重启，需要重新连接设备
-        time.sleep(10)
-        d = u2.connect_adb_wifi(ipport)  # 连接安卓设备
-        time.sleep(4*60)  #等待设备开机亮屏
-
-        # 重启系统接口测试
-        d.app_start(package_name="com.example.haerbinmetrodemo", activity="com.example.haerbinmetrodemo.MainActivity")
-        time.sleep(2)
-        d(resourceId="com.example.haerbinmetrodemo:id/button3").click()    #  点击“重启系统”按钮
-        time.sleep(60)  #等待设备开机亮屏
+        # #Rom ota接口测试
+        # d(resourceId="com.example.haerbinmetrodemo:id/button2").click() # 点击“确认升级ROM” ，设备升级会重启，需要重新连接设备
+        # time.sleep(10)
+        # d = u2.connect_adb_wifi(__ipport)  # 连接安卓设备
+        # time.sleep(4*60)  #等待设备开机亮屏
+        #
+        # # 重启系统接口测试
+        # d.app_start(package_name="com.example.haerbinmetrodemo", activity="com.example.haerbinmetrodemo.MainActivity")
+        # time.sleep(2)
+        # d(resourceId="com.example.haerbinmetrodemo:id/button3").click()    #  点击“重启系统”按钮
+        # time.sleep(60)  #等待设备开机亮屏

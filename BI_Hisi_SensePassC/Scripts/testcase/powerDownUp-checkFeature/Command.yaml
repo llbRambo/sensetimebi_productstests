@@ -9,7 +9,18 @@ SSH_Port: 22
 #按照顺序需要执行的命令
 #获取特征库的md5值
 Command1: md5sum /data/bi/reo/db/feature_db.sqlite
+Command2: md5sum /data/bi/reo/db/k_feature.current.index
+Command3: md5sum /data/bi/reo/db/k_feature.current.k
+Command4: md5sum /data/bi/reo/db/k_feature.current.v
+Command5: md5sum /data/bi/reo/db/k_feature.enroll.k
+Command6: md5sum /data/bi/reo/db/k_feature.enroll.v
+
 
 #原始特征库的md5值，这个需要自行手动获取
-original_feature_db_md5: 45a31007ae3451d76e0eec6d959aab8f
+original_feature_db_md5: bd728b0160154b882403236c575b2b2c
+original_k_feature_current_index_md5: 51797d228e85287e3757d98b13276545
+original_k_feature_current_k_md5: cf2a7039d49a6bc866b4d87eb0ad3373
+original_k_feature_current_v_md5: c8c7d73680ca135204b8bc1c3086cc1b
+original_k_feature_enroll_k_md5: cf2a7039d49a6bc866b4d87eb0ad3373
+original_k_feature_enroll_v_md5: b811b18c62630df794ca0c0ef61e0163
 

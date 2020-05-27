@@ -31,7 +31,7 @@ if __name__ == '__main__':
     iplist = ["10.9.96.199","10.9.96.47","10.9.97.172"]
     port = 22
     login_name = "root"
-    login_pwd = "BI_SensePassC#"
+    login_pwd = "BI_Hisi_SensePassC#"
 
 #   test_cmd = "source /etc/profile; ubus call system info"
 #   test_cmd = r"/data/mcu_test v"

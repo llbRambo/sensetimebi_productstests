@@ -40,7 +40,8 @@ def relay_test(ip, port, open, send, get_postback, close):
 
 if __name__ == '__main__':
     #在指定路径下打开RS485Check_sensepassX.exe
-    a = autoit.run('D:\\test-project\\000-testScripts\\sensetimebi_productstests\\BI_SensePassC\\testTools\\RS485Check_sensepassX\\RS485Check_sensepassX')
+    a = autoit.run(
+        '/sensetimebi_productstests/BI_Hisi_SensePassC\\testTools\\RS485Check_sensepassX\\RS485Check_sensepassX')
     print(a)
     time.sleep(2)
     autoit.mouse_click(button='left', x=1130, y=457, clicks=1, speed=-1) #
