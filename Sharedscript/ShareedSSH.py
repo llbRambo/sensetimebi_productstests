@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import sys
-
+import time
 import paramiko
 from scp import SCPClient
 
@@ -13,6 +13,9 @@ class SSH(object):
         self.__port = port
         self.__username = username
         self.__passwd = passwd
+        self.__stdin = ''
+        self.__stdout = ''
+        self.__stderr = ''
         self.ssh_client = paramiko.SSHClient()
 
     def connects(self):
@@ -50,10 +53,16 @@ class SSH(object):
 
     def send_data(self, command):
         # 执行对应命令
-        print('command: %s'%command)
-        stdin, stdout, stderr = self.ssh_client.exec_command(command, bufsize=1024, timeout=10)
-        #print('指令执行结果： ', stdout.read().decode('utf-8'))
-        return stdout.read().decode('utf-8')
+        #print('command: %s'%command)
+        # stdin, stdout, stderr = self.ssh_client.exec_command(command)  #bufsize=1024,,  timeout=70
+        # return stdout.read().decode('utf-8')
+
+        self.__stdin, self.__stdout, self.__stderr = self.ssh_client.exec_command(command)
+        time.sleep(3)
+
+    def get_data(self):
+        return self.__stdout.read().decode('utf-8')
+
 
     def send_and_recv(self, command):
         shell = self.ssh_client.invoke_shell()
@@ -95,6 +104,8 @@ class SCP(SSH):
         remote_file = str(remote_path) + '/' + str(filename)
         _scp.get(remote_file, local_path)
         print("file " + str(remote_file) + " to " + str(local_path) + "  download  successfully.")
+        rmfile = 'rm -rf ' + remote_file  # 文件传送到本地之后，删除远程主机上的该文件
+        self.send_data(rmfile)
         self.disconnect()
 
     # # 把本地某个指定路径下的所有文件上传到远程主机指定路径
