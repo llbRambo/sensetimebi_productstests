@@ -1,0 +1,20 @@
+#!/bin/sh
+STR="account_verify"
+function check_deadlock() {
+  PID=$(pgrep -f app_aikey)
+  if [ $PID ]; then
+    ubus -v list app.web | grep  account > /data/Deadlock_monitor_temp.txt
+	  i=$(grep -w $STR /data/Deadlock_monitor_temp.txt)
+	  filelength=$(expr length $i)
+	  if [ $filelength == '0' ]; then
+	    date >> /data/monitor_Deadlock_log.txt
+	    echo 'Deadlock occurs!!!' >> /data/monitor_Deadlock_log.txt
+	  else
+	    kill -9 $PID
+	  fi
+  fi
+}
+
+while [ True ]; do
+  check_deadlock
+done

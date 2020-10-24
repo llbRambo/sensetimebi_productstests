@@ -48,11 +48,11 @@ class SenseEngineCameraDemoDebugApk(object):
         flag = info.find(appName)
         # print('flag: ', flag)
         if flag != -1:
-            self.log.logger.debug('进程存在，杀掉进程！！！')
+            self.log.logger.debug('检测到进程关闭失败，杀掉进程！！！')
             self.d.app_clear(appName)
             self.log.logger.debug('杀进程成功！！！')
         else:
-            self.log.logger.debug('进程不存在！！！')
+            self.log.logger.debug('检测到进程关闭成功！！！')
 
 
 
@@ -166,9 +166,15 @@ class SenseEngineCameraDemoDebugApk(object):
         添加单个用户
         :return:
         '''
-        self.setting() #点击预览界面的“设置”按钮
+        self.setting() #点击预览界面的“设置”按钮，退出预览界面进入设置界面
         time.sleep(3)
         self.d(resourceId="com.sensetime.demo:id/setting_batch_add_user_btn").click() #点击添加用户
+
+        #以下两步可能要经常维护修改
+        self.d(resourceId="com.sensetime.demo:id/tv_image_dir").click()
+        self.d(resourceId="com.sensetime.demo:id/tv_image_dir", text="04-batch-images").click()  # 选择图片所在位置
+        time.sleep(1)
+
         self.d.xpath('//*[@resource-id="com.sensetime.demo:id/list"]/android.widget.FrameLayout[1]/android.widget.ImageView[1]'
                      ).click()#选择图片
         time.sleep(1)
@@ -225,10 +231,12 @@ class SenseEngineCameraDemoDebugApk(object):
         '''固件升级'''
         self.log.logger.debug("---------固件升级----------test %s" % i)
         self.setting()
+        time.sleep(1)
         self.d(resourceId="com.sensetime.demo:id/setting_upgrade_firmware_btn").click()  # 升级固件
         time.sleep(0.5)
         if self.d(text=bin_name).exists():    #检测所选软件版本是否为目标版本
-            self.d.xpath('//*[@text="' + bin_name + '"]').click()  # 升级固件
+            self.d(resourceId="android:id/title", text=bin_name).click()
+            # self.d.xpath('//*[@text="' + bin_name + '"]').click()  # 升级固件
             self.log.logger.debug("当前选择固件为：%s" % bin_name)
         else:
             self.log.logger.debug("---------找不到目标升级文件----------")
@@ -252,10 +260,10 @@ class SenseEngineCameraDemoDebugApk(object):
             self.screen_img(img_path, img_name)
             time.sleep(0.5)
             self.d(resourceId="com.sensetime.demo:id/md_buttonDefaultPositive").click()  # 点击确认
-        time.sleep(100) #等待设备启动
-        #如果上位机仍然存在，在下次测试之前需要杀掉上位机
+        # 确保上述操作之后，上位机被停止了，防止影响的下次测试
         appName = 'com.sensetime.demo'
         self.stop_app(appName)  # 杀掉上位机
+
 
 
     def get_feature(self,id):
@@ -295,9 +303,9 @@ class SenseEngineCameraDemoDebugApk(object):
         time.sleep(0.5)
         self.d(resourceId="com.sensetime.demo:id/md_buttonDefaultPositive").click()
         time.sleep(60)
-        self.stop_app()
+        self.stop_app("com.sensetime.demo")
         self.start_app()
-        self.check_Report_switch()
+        # self.check_Report_switch()
         self.into_preview()
         time.sleep(1)
         self.screen_img(img_path, img_name)

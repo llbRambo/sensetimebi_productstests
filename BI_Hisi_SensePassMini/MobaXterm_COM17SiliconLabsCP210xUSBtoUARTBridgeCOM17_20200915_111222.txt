@@ -1,0 +1,497 @@
+
+root@OpenWrt:/lib/firmware# clear
+root@OpenWrt:/lib/firmware#
+Uncompress Ok!
+
+U-Boot 2016.11 (Sep 10 2020 - 09:03:15 +0000)hi3516dv300, Build: jenkins-BI_SenseEngine_PassC-453
+
+Relocation Offset is: 1f6c8000
+Relocating to 9fec8000, new gd at 9fd47ef0, sp at 9fd47ed0
+MMC:
+EMMC/MMC/SD controller initialization.
+scan edges:2 p2f:6 f2p:1
+mix set temp-phase 3
+scan elemnts: startp:3 endp:114
+Tuning SampleClock. mix set phase:[03/07] ele:[13/15]
+** First descriptor is NOT a primary desc on 0:1 **
+MMC/SD Card:
+    MID:         0x15
+    Read Block:  512 Bytes
+    Write Block: 512 Bytes
+    Chip Size:   14910M Bytes (High Capacity)
+    Name:        "AJTD4"
+    Chip Type:   MMC
+    Version:     0.0
+    Speed:       100000000Hz
+    Bus Width:   4bit
+himci: 0 (eMMC)
+In:    serial
+Out:   serial
+Err:   serial
+Net:   eth0
+Warning: eth0 (eth0) using random MAC address - 86:a8:07:2c:24:e0
+
+** No partition table - mmc 0 **
+oem_get_rootfs_type: Find ROOTFS type(4) in "mem=660M console=ttyAMA0,115200 root=/dev/mmcblk0p4 rootfstype=ext4 rw rootwait blkdevparts=mmcblk0:512K(boot),512K(param),6M(kernel),505M(rootfs),1536M(rootfs_data),12852M(datafs),511M@0x100000(firmware)"
+oem_get_mtd_partition: parts=mmcblk0:512K(boot),512K(param),6M(kernel),505M(rootfs),1536M(rootfs_data),12852M(datafs),511M@0x100000(firmware)
+oem_get_mtd_partition: Find MTD partition[512K(boot),512K(param),6M(kernel),505M(rootfs),1536M(rootfs_data),12852M(datafs),511M@0x100000(firmware)] from "mem=660M console=ttyAMA0,115200 root=/dev/mmcblk0p4 rootfstype=ext4 rw rootwait blkdevparts=mmcblk0:512K(boot),512K(param),6M(kernel),505M(rootfs),1536M(rootfs_data),12852M(datafs),511M@0x100000(firmware)"
+oem_set_partition: name=boot), szie=512K
+oem_parse_size: OFFSET=0x0, SIZE=0x80000
+oem_set_partition: name=boot, addr=0x0, size=0x80000
+oem_parse_mtd_partition: PART[0]: name=boot, addr=0x0, size=0x80000
+oem_set_partition: name=param), szie=512K
+oem_parse_size: OFFSET=0x0, SIZE=0x80000
+oem_set_partition: name=param, addr=0x0, size=0x80000
+oem_parse_mtd_partition: PART[1]: name=param, addr=0x0, size=0x80000
+oem_set_partition: name=kernel), szie=6M
+oem_parse_size: OFFSET=0x0, SIZE=0x600000
+oem_set_partition: name=kernel, addr=0x0, size=0x600000
+oem_parse_mtd_partition: PART[2]: name=kernel, addr=0x0, size=0x600000
+oem_set_partition: name=rootfs), szie=505M
+oem_parse_size: OFFSET=0x0, SIZE=0x1f900000
+oem_set_partition: name=rootfs, addr=0x0, size=0x1f900000
+oem_parse_mtd_partition: PART[3]: name=rootfs, addr=0x0, size=0x1f900000
+oem_set_partition: name=rootfs_data), szie=1536M
+oem_parse_size: OFFSET=0x0, SIZE=0x60000000
+oem_set_partition: name=rootfs_data, addr=0x0, size=0x60000000
+oem_parse_mtd_partition: PART[4]: name=rootfs_data, addr=0x0, size=0x60000000
+oem_set_partition: name=datafs), szie=12852M
+oem_parse_size: OFFSET=0x0, SIZE=0x323400000
+oem_set_partition: name=datafs, addr=0x0, size=0x323400000
+oem_parse_mtd_partition: PART[5]: name=datafs, addr=0x0, size=0x323400000
+oem_set_partition: name=firmware), szie=511M@0x100000
+oem_parse_size: OFFSET=0x100000, SIZE=0x1ff00000
+oem_set_partition: name=firmware, addr=0x100000, size=0x1ff00000
+oem_parse_mtd_partition: PART[6]: name=firmware, addr=0x100000, size=0x1ff00000
+oem_mtd_partition_init: MTD0: name=boot, addr=0x0, size=0x80000, type=0
+oem_mtd_partition_init: MTD1: name=param, addr=0x80000, size=0x80000, type=0
+oem_mtd_partition_init: MTD2: name=kernel, addr=0x100000, size=0x600000, type=0
+oem_mtd_partition_init: MTD3: name=rootfs, addr=0x700000, size=0x1f900000, type=4
+oem_mtd_partition_init: MTD4: name=rootfs_data, addr=0x20000000, size=0x60000000, type=4
+oem_mtd_partition_init: MTD5: name=datafs, addr=0x80000000, size=0x323400000, type=0
+oem_mtd_partition_init: PART[6]: This is alias partition(name=firmware, addr=0x100000, size=0x1ff00000)
+oem_mtd_partition_init: MTD6: name=firmware, addr=0x100000, size=0x1ff00000, type=0
+blk_get_device_part_str: ADDR=0x700000, SIZE=0x1f900000
+blk_get_device_part_str: START=0x3800, SIZE=0xfc800, BLK_SIZE=0x200)
+** No partition table - mmc 0 **
+blk_get_device_part_str: ADDR=0x700000, SIZE=0x1f900000
+blk_get_device_part_str: START=0x3800, SIZE=0xfc800, BLK_SIZE=0x200)
+198335 bytes read in 26 ms (7.3 MiB/s)
+you should first set:
+
+args: [format]
+        -<format> : 0: semi-plannar yvu420, 1: ARGB1555, 2: ARGB8888
+        - setenv jpeg_addr     0x--------
+        - setenv jpeg_size     0x--------
+        - setenv vobuf         0x--------
+        - setenv jpeg_emar_buf 0x--------
+
+jpeg decoding ...
+<<addr=0x81000000, size=0x306bf, jpeg_emar_buf=0x81100000, vobuf=0xbf800000>>
+hardware decoding success! 600x1024, stride 640.
+decode jpeg!
+this is mipi_tx begin.
+load mipi_tx driver successful!
+this is mipi_tx end.
+dev 0 opened!
+video layer 0 opened!
+Writing to MMC(0)... done
+Hit any key to stop autoboot:  0
+oem_update_version_param: new_uboot_ver = V1.0.0
+oem_update_version_param: old_uboot_ver = V1.0.0
+oem_main: PHYS_SDRAM_1=0x80000000, PHYS_SDRAM_1_SIZE=0x20000000
+oem_main: CONFIG_SYS_LOAD_ADDR=0x82080000, CONFIG_SYS_SDRAM_BASE=0x80000000
+oem_main: CONFIG_SYS_TEXT_BASE_ORI=0x80700000, CONFIG_SYS_TEXT_BASE=0x80800000
+oem_main: CONFIG_SYS_INIT_SP_ADDR=0x4014000, CONFIG_NR_DRAM_BANKS=0x1
+oem_main: CONFIG_ENV_OFFSET=0x80000, CONFIG_ENV_SIZE=0x40000
+oem_main: CONFIG_ENV_SECT_SIZE=0x10000, CONFIG_SYS_MALLOC_LEN=0x140000
+oem_main: CFG_BOOT_PARAMS=0x827FFF00
+pl061_gpio_probe: platform_data(gpio_bank=0, gpio_base=0x120d0000)
+pl061_gpio_probe: uclass_private(bank_name=GPIO0_, gpio_base=0x0, gpio_count=8)
+pl061_gpio_probe: platform_data(gpio_bank=1, gpio_base=0x120d1000)
+pl061_gpio_probe: uclass_private(bank_name=GPIO1_, gpio_base=0x0, gpio_count=8)
+pl061_gpio_probe: platform_data(gpio_bank=2, gpio_base=0x120d2000)
+pl061_gpio_probe: uclass_private(bank_name=GPIO2_, gpio_base=0x0, gpio_count=8)
+pl061_direction_output: dev=9fd48160, offset=2, value=1, CHIP(chip=9fd48ab8, chip_base=120d2000)
+usb_power_init: Power-on USB VBUS ...
+USB0:   Register 1000140 NbrPorts 1
+Starting the controller
+USB XHCI 1.10
+scanning bus 0 for devices... 1 USB Device(s) found
+0 Storage Device(s) found
+udisk_init: Fail to scan USB mass strorage, rc=-1
+udisk_upgrade: Fail to initialize UDISK, rc=-1
+oem_main: Fail to udisk_upgrade, rc=-1
+oem_firstboot: firstboot=NULL
+oem_need_dload: DLOAD=NULL
+
+MMC read: dev # 0, block # 2048, count 12288 ... 12288 blocks read: OK
+## Booting kernel from Legacy Image at 82000000 ...
+   Image Name:   Linux-4.9.37
+   Image Type:   ARM Linux Kernel Image (uncompressed)
+   Data Size:    3641790 Bytes = 3.5 MiB
+   Load Address: 80008000
+   Entry Point:  80008000
+   Loading Kernel Image ... OK
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 4.9.37 (zhaowenliang@lthpc) (gcc version 6.3.0 (HC&C V1R3C00SPC200B005_20190606) ) #0 SMP Thu Sep 10 09:03:15 2020
+[    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=10c5387d
+[    0.000000] CPU: div instructions available: patching division code
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] OF: fdt:Machine model: Hisilicon HI3516DV300 DEMO Board
+[    0.000000] cmz zone is not set!
+[    0.000000] cma: Reserved 16 MiB at 0xa8400000
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] percpu: Embedded 13 pages/cpu @e7ea0000 s21772 r8192 d23284 u53248
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 167640
+[    0.000000] Kernel command line: mem=660M console=ttyAMA0,115200 root=/dev/mmcblk0p4 rootfstype=ext4 rw rootwait blkdevparts=mmcblk0:512K(boot),512K(param),6M(kernel),505M(rootfs),1536M(rootfs_data),12852M(datafs),511M@0x100000(firmware)
+[    0.000000] PID hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Memory: 644352K/675840K available (5120K kernel code, 176K rwdata, 1304K rodata, 1024K init, 411K bss, 15104K reserved, 16384K cma-reserved, 0K highmem)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+[    0.000000]     vmalloc : 0xe9800000 - 0xff800000   ( 352 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xe9400000   ( 660 MB)
+[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc0600000   (6112 kB)
+[    0.000000]       .init : 0xc0800000 - 0xc0900000   (1024 kB)
+[    0.000000]       .data : 0xc0900000 - 0xc092c040   ( 177 kB)
+[    0.000000]        .bss : 0xc092e000 - 0xc0994db4   ( 412 kB)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000]  Build-time adjustment of leaf fanout to 32.
+[    0.000000] NR_IRQS:16 nr_irqs:16 16
+[    0.000000] Gic dist init...
+[    0.000000] arm_arch_timer: Architected cp15 timer(s) running at 50.00MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0xb8812736b, max_idle_ns: 440795202655 ns
+[    0.000006] sched_clock: 56 bits at 50MHz, resolution 20ns, wraps every 4398046511100ns
+[    0.000017] Switching to timer-based delay loop, resolution 20ns
+[    0.000151] clocksource: hisp804: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 637086815595 ns
+[    0.000472] Console: colour dummy device 80x30
+[    0.000492] Calibrating delay loop (skipped), value calculated using timer frequency.. 100.00 BogoMIPS (lpj=500000)
+[    0.000505] pid_max: default: 32768 minimum: 301
+[    0.000592] Mount-cache hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.000602] Mountpoint-cache hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.001129] CPU: Testing write buffer coherency: ok
+[    0.001384] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.001414] Setting up static identity map for 0x80100000 - 0x80100058
+[    0.002845] CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+[    0.002948] Brought up 2 CPUs
+[    0.002966] SMP: Total of 2 processors activated (200.00 BogoMIPS).
+[    0.002972] CPU: All CPU(s) started in SVC mode.
+[    0.007786] VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5
+[    0.008010] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.008035] futex hash table entries: 512 (order: 3, 32768 bytes)
+[    0.008632] pinctrl core: initialized pinctrl subsystem
+[    0.009074] NET: Registered protocol family 16
+[    0.010069] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    0.011182] Serial: AMBA PL011 UART driver
+[    0.012542] 120a0000.uart: ttyAMA0 at MMIO 0x120a0000 (irq = 21, base_baud = 0) is a PL011 rev2
+[    0.387693] console [ttyAMA0] enabled
+[    0.391878] uart-pl011 120a1000.uart: aliased and non-aliased serial devices found in device tree. Serial port enumeration may be unpredictable.
+[    0.404854] 120a1000.uart: ttyAMA1 at MMIO 0x120a1000 (irq = 22, base_baud = 0) is a PL011 rev2
+[    0.414011] uart-pl011 120a2000.uart: aliased and non-aliased serial devices found in device tree. Serial port enumeration may be unpredictable.
+[    0.426990] 120a2000.uart: ttyAMA2 at MMIO 0x120a2000 (irq = 23, base_baud = 0) is a PL011 rev2
+[    0.436147] uart-pl011 120a4000.uart: aliased and non-aliased serial devices found in device tree. Serial port enumeration may be unpredictable.
+[    0.449114] 120a4000.uart: ttyAMA3 at MMIO 0x120a4000 (irq = 24, base_baud = 0) is a PL011 rev2
+[    0.500289] SCSI subsystem initialized
+[    0.504131] ssp-pl022 120c0000.spi: ARM PL022 driver, device ID: 0x00800022
+[    0.511170] ssp-pl022 120c0000.spi: mapped registers from 0x120c0000 to e9840000
+[    0.519298] ssp-pl022 120c1000.spi: ARM PL022 driver, device ID: 0x00800022
+[    0.526326] ssp-pl022 120c1000.spi: mapped registers from 0x120c1000 to e9844000
+[    0.534643] ssp-pl022 120c2000.spi: ARM PL022 driver, device ID: 0x00800022
+[    0.541654] ssp-pl022 120c2000.spi: mapped registers from 0x120c2000 to e9846000
+[    0.549935] usbcore: registered new interface driver usbfs
+[    0.555515] usbcore: registered new interface driver hub
+[    0.560882] usbcore: registered new device driver usb
+[    0.566042] Linux video capture interface: v2.00
+[    0.571955] clocksource: Switched to clocksource hisp804
+[    0.583514] NET: Registered protocol family 2
+[    0.588416] TCP established hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.595587] TCP bind hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.602156] TCP: Hash tables configured (established 8192 bind 8192)
+[    0.608568] UDP hash table entries: 512 (order: 2, 16384 bytes)
+[    0.614536] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes)
+[    0.621049] NET: Registered protocol family 1
+[    0.625811] RPC: Registered named UNIX socket transport module.
+[    0.631730] RPC: Registered udp transport module.
+[    0.636455] RPC: Registered tcp transport module.
+[    0.641152] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.648902] workingset: timestamp_bits=30 max_order=18 bucket_order=0
+[    0.664375] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.671063] NFS: Registering the id_resolver key type
+[    0.676152] Key type id_resolver registered
+[    0.680328] Key type id_legacy registered
+[    0.684382] fuse init (API version 7.26)
+[    0.689465] io scheduler noop registered
+[    0.693414] io scheduler deadline registered
+[    0.697891] io scheduler cfq registered (default)
+[    0.704754] pl061_gpio 120d0000.gpio_chip: PL061 GPIO chip @0x120d0000 registered
+[    0.712937] pl061_gpio 120d1000.gpio_chip: PL061 GPIO chip @0x120d1000 registered
+[    0.721082] pl061_gpio 120d2000.gpio_chip: PL061 GPIO chip @0x120d2000 registered
+[    0.729229] pl061_gpio 120d3000.gpio_chip: PL061 GPIO chip @0x120d3000 registered
+[    0.737400] pl061_gpio 120d4000.gpio_chip: PL061 GPIO chip @0x120d4000 registered
+[    0.745482] pl061_gpio 120d5000.gpio_chip: PL061 GPIO chip @0x120d5000 registered
+[    0.753612] pl061_gpio 120d6000.gpio_chip: PL061 GPIO chip @0x120d6000 registered
+[    0.761700] pl061_gpio 120d7000.gpio_chip: PL061 GPIO chip @0x120d7000 registered
+[    0.769834] pl061_gpio 120d8000.gpio_chip: PL061 GPIO chip @0x120d8000 registered
+[    0.777956] pl061_gpio 120d9000.gpio_chip: PL061 GPIO chip @0x120d9000 registered
+[    0.786075] pl061_gpio 120da000.gpio_chip: PL061 GPIO chip @0x120da000 registered
+[    0.794205] pl061_gpio 120db000.gpio_chip: PL061 GPIO chip @0x120db000 registered
+[    0.812241] brd: module loaded
+[    1.042071] libphy: hisi_femac_mii_bus: probed
+[    1.047450] libphy: Fixed MDIO Bus: probed
+[    1.142161] Generic PHY 10011100.mdio:01: attached PHY driver [Generic PHY] (mii_bus:phy_addr=10011100.mdio:01, irq=-1)
+[    1.152953] phy_id=0x001cc816, phy_mode=rmii
+[    1.157229] hisi-femac 10010000.ethernet: using random MAC address f6:ed:2d:d9:4d:13
+[    1.166434] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    1.172983] ehci-platform: EHCI generic platform driver
+[    1.178351] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    1.184558] ohci-platform: OHCI generic platform driver
+[    1.190073] xhci-hcd 100e0000.xhci_0: xHCI Host Controller
+[    1.195596] xhci-hcd 100e0000.xhci_0: new USB bus registered, assigned bus number 1
+[    1.203572] xhci-hcd 100e0000.xhci_0: hcc params 0x0220fe6c hci version 0x110 quirks 0x20010010
+[    1.212325] xhci-hcd 100e0000.xhci_0: irq 31, io mem 0x100e0000
+[    1.218441] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    1.225238] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.232461] usb usb1: Product: xHCI Host Controller
+[    1.237334] usb usb1: Manufacturer: Linux 4.9.37 xhci-hcd
+[    1.242733] usb usb1: SerialNumber: 100e0000.xhci_0
+[    1.248133] hub 1-0:1.0: USB hub found
+[    1.251919] hub 1-0:1.0: 1 port detected
+[    1.256226] xhci-hcd 100e0000.xhci_0: xHCI Host Controller
+[    1.261731] xhci-hcd 100e0000.xhci_0: new USB bus registered, assigned bus number 2
+[    1.269523] usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+[    1.277773] usb usb2: New USB device found, idVendor=1d6b, idProduct=0003
+[    1.284569] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.291784] usb usb2: Product: xHCI Host Controller
+[    1.296662] usb usb2: Manufacturer: Linux 4.9.37 xhci-hcd
+[    1.302061] usb usb2: SerialNumber: 100e0000.xhci_0
+[    1.307445] hub 2-0:1.0: USB hub found
+[    1.311225] hub 2-0:1.0: hub can't support USB3.0
+[    1.316417] usbcore: registered new interface driver cdc_acm
+[    1.322087] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[    1.330179] usbcore: registered new interface driver usb-storage
+[    1.336282] usbcore: registered new interface driver usbserial
+[    1.342154] usbcore: registered new interface driver usbserial_generic
+[    1.348707] usbserial: USB Serial support registered for generic
+[    1.354751] usbcore: registered new interface driver ch341
+[    1.360260] usbserial: USB Serial support registered for ch341-uart
+[    1.366592] usbcore: registered new interface driver cp210x
+[    1.372205] usbserial: USB Serial support registered for cp210x
+[    1.378168] usbcore: registered new interface driver ftdi_sio
+[    1.383949] usbserial: USB Serial support registered for FTDI USB Serial Device
+[    1.391361] usbcore: registered new interface driver pl2303
+[    1.396975] usbserial: USB Serial support registered for pl2303
+[    1.562285] hibvt_rtc 12080000.rtc: rtc core: registered 12080000.rtc as rtc0
+[    1.569446] hibvt_rtc 12080000.rtc: RTC driver for hibvt enabled
+[    1.575519] i2c /dev entries driver
+[    1.579377] hibvt-i2c 120b0000.i2c: hibvt-i2c0@100000hz registered
+[    1.585960] hibvt-i2c 120b1000.i2c: hibvt-i2c1@400000hz registered
+[    1.592410] hibvt-i2c 120b2000.i2c: hibvt-i2c2@100000hz registered
+[    1.599125] hibvt-i2c 120b3000.i2c: hibvt-i2c3@100000hz registered
+[    1.605598] hibvt-i2c 120b4000.i2c: hibvt-i2c4@400000hz registered
+[    1.612056] hibvt-i2c 120b5000.i2c: hibvt-i2c5@400000hz registered
+[    1.618495] hibvt-i2c 120b6000.i2c: hibvt-i2c6@100000hz registered
+[    1.624959] hibvt-i2c 120b7000.i2c: hibvt-i2c7@100000hz registered
+[    1.631413] usbcore: registered new interface driver uvcvideo
+[    1.637169] USB Video Class driver (1.1.1)
+[    1.641828] himci: mmc host probe
+[    1.852032] himci: mmc host probe
+[    2.022929] mmc0: CMDQ supported: depth: 16
+[    2.056632] scan edges:2 p2f:6 f2p:1
+[    2.060202] mix set temp-phase 3
+[    2.063937] hidraw: raw HID events driver (C) Jiri Kosina
+[    2.069835] usbcore: registered new interface driver usbhid
+[    2.075423] usbhid: USB HID core driver
+[    2.080197] NET: Registered protocol family 10
+[    2.085771] NET: Registered protocol family 17
+[    2.090268] 8021q: 802.1Q VLAN Support v1.8
+[    2.094511] Key type dns_resolver registered
+[    2.098895] Registering SWP/SWPB emulation handler
+[    2.114571] scan elemnts: startp:3 endp:114
+[    2.118763] Tuning SampleClock. mix set phase:[03/07] ele:[13/15]
+[    2.131541] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    2.211995] hibvt_rtc 12080000.rtc: setting system clock to 2020-09-15 03:05:15 UTC (1600139115)
+[    2.221185] Waiting for root device /dev/mmcblk0p4...
+[    2.226484] mmc0: new HS200 MMC card at address 0001
+[    2.231910] mmc0: -524: cmdq: unable to set-up
+[    2.236671] mmcblk0: mmc0:0001 AJTD4R 14.6 GiB
+[    2.241418] mmcblk0boot0: mmc0:0001 AJTD4R partition 1 4.00 MiB
+[    2.248594] mmcblk0boot1: mmc0:0001 AJTD4R partition 2 4.00 MiB
+[    2.254747] mmcblk0rpmb: mmc0:0001 AJTD4R partition 3 4.00 MiB
+[    2.261002]  mmcblk0: p1(boot) p2(param) p3(kernel) p4(rootfs) p5(rootfs_data) p6(datafs) p7(firmware)
+[    2.352732] EXT4-fs (mmcblk0p4): recovery complete
+[    2.357988] EXT4-fs (mmcblk0p4): mounted filesystem with ordered data mode. Opts: (null)
+[    2.366144] VFS: Mounted root (ext4 filesystem) on device 179:4.
+[    2.373378] Freeing unused kernel memory: 1024K (c0800000 - c0900000)
+[    2.468348] init: Console is alive
+[    2.644373] kmodloader: loading kernel modules from /etc/modules-boot.d/*
+[    2.651315] kmodloader: done loading kernel modules from /etc/modules-boot.d/*
+[    2.672197] init: - preinit -
+[    2.695968] random: fast init done
+[    2.851217] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[    2.936564] EXT4-fs (mmcblk0p5): recovery complete
+[    2.941825] EXT4-fs (mmcblk0p5): mounted filesystem with ordered data mode. Opts: (null)
+[    2.951215] mount_root: switching to ext4 overlay
+[    2.989550] procd: - early -
+[    3.655669] procd: - ubus -
+[    3.715987] procd: - init -
+Please press Enter to activate this console.
+[    3.911030] kmodloader: loading kernel modules from /etc/modules.d/*
+[    3.922581] ip6_tables: (C) 2000-2006 Netfilter Core Team
+[    3.938660] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    3.947655] nf_conntrack version 0.5.0 (11264 buckets, 45056 max)
+[    4.091579] xt_time: kernel timezone is -0000
+[    4.101639] PPP generic driver version 2.4.2
+[    4.107386] NET: Registered protocol family 24
+[    4.114434] kmodloader: done loading kernel modules from /etc/modules.d/*
+[    5.273759] ++++++ DDR:  MB, OS: 660 MB ++++++++
+[    5.304500] sys_config: loading out-of-tree module taints kernel.
+[    5.311303] gpio_enable_tp: Start ...
+[    5.315024] gpio_enable_wifi_bt: Start ...!
+[    5.551953]
+==========chip: hi3516dv300==========[    5.556690] ==========sensor0: sc2315e==========
+[    5.731948] ==========sensor1: sc2315e==========
+[    5.951394] Module himedia: init ok
+[    5.954928] Hisilicon Media Memory Zone Manager
+[    5.959590] hi_osal 1.0 init success!
+[    5.968660] hi3516cv500_base: module license 'Proprietary' taints kernel.
+[    5.975490] Disabling lock debugging due to kernel taint
+[    5.990713] load sys.ko for Hi3516CV500...OK!
+[    6.004139] load tde.ko for Hi3516CV500...OK!
+[    6.015919] load region.ko for Hi3516CV500...OK!
+[    6.031002] load gdc.ko for Hi3516CV500...OK!
+[    6.044405] load vgs.ko for Hi3516CV500...OK!
+[    6.056026] load dis.ko for Hi3516CV500...OK!
+[    6.081129] load vi.ko for Hi3516CV500...OK !
+[    6.094636] ISP Mod init!
+[    6.111167] load vpss.ko for Hi3516CV500...OK!
+[    6.126382] load vo.ko for Hi3516CV500...OK!
+[    6.147252] load hifb.ko OK!
+[    6.157654] load rc.ko for Hi3516CV500...OK!
+[    6.172516] load venc.ko for Hi3516CV500...OK!
+[    6.183562] load chnl.ko for Hi3516CV500...OK!
+[    6.195397] load vedu.ko for Hi3516CV500...OK!
+[    6.207968] load h264e.ko for Hi3516CV500...OK!
+[    6.220797] load h265e.ko for Hi3516CV500...OK!
+[    6.232372] load jpege.ko for Hi3516CV500...OK!
+[    6.244120] load jpegd.ko ....OK!
+[    6.258484] load hi_vfmw.ko ....OK
+[    6.270642] load vdec.ko ....OK
+[    6.280235] register dev
+[    6.283392] Hisilicon Watchdog Timer: 0.01 initialized. default_margin=60 sec (nodeamon= 0)
+[    6.291742] hiwtdg init ok. ver=Sep 10 2020, 09:11:06.
+[    6.306621] load ive.ko for Hi3516CV500...OK!
+[    6.319947] load nnie.ko for Hi3516CV500...OK!
+[    6.331912] load hi_piris.ko OK!!
+[    6.349086] load sensor_spi.ko for Hi3516CV500...OK !
+[    6.372950] load mipi_rx driver successful!
+[    6.384511] load mipi_tx driver successful!
+[    6.518115] --LED-- Driver Version: 1.0
+[    6.522273] --LED-- init ir_led
+[    6.525417] --LED-- ir_led failed to find inverse in dts, use default 0
+[    6.532066] --LED-- ir_led failed to find max_brightness in dts, use default 255
+[    6.539453] --LED-- ir_led failed to find default_brightness in dts, use default 0
+[    6.547246] --LED-- init lcd_bl
+[    6.550388] --LED-- lcd_bl failed to find inverse in dts, use default 0
+[    6.557033] --LED-- lcd_bl failed to find max_brightness in dts, use default 255
+[    6.587731] [FTS_TS]fts_ts_init: Enter
+[    6.591582] [FTS_TS/I]fts_ts_probe:Touch Screen(I2C BUS) driver prboe...
+[    6.598382] [FTS_TS]fts_ts_probe_entry: Enter
+[    6.602747] [FTS_TS]fts_parse_dt: Enter
+[    6.606583] [FTS_TS/I]fts_get_dt_coords:display x(0 600) y(0 1024)
+[    6.612793] [FTS_TS/I]fts_parse_dt:max touch number:2, irq gpio:25, reset gpio:26
+[    6.620266] [FTS_TS]fts_parse_dt: Exit(1229)
+[    6.624694] [FTS_TS]fts_bus_init: Enter
+[    6.628528] [FTS_TS]fts_bus_init: Exit(160)
+[    6.632742] [FTS_TS]fts_input_init: Enter
+[    6.637055] input: fts_ts as /devices/platform/soc/120b1000.i2c/i2c-1/1-0038/input/input1
+[    6.645419] [FTS_TS]fts_input_init: Exit(773)
+[    6.649773] [FTS_TS]fts_gpio_configure: Enter
+[    6.654177] [FTS_TS]fts_gpio_configure: Exit(1100)
+[    6.658961] [FTS_TS]fts_reset_proc:tp reset
+[    6.912409] [FTS_TS]fts_get_chip_types:verify id:0x5422
+[    6.917632] [FTS_TS/I]fts_get_ic_information:get ic information, chip id = 0x5422
+[    6.925146] [FTS_TS/I]fts_create_apk_debug_channel:Create proc entry success!
+[    6.932372] [FTS_TS/I]fts_create_sysfs:[EX]: sysfs_create_group() succeeded!!
+[    6.939516] [FTS_TS]fts_ex_mode_init:create sysfs(ex_mode) succeedfully
+[    6.946148] [FTS_TS][TEST]fts_test_init: Enter
+[    6.950583] [FTS_TS/I][TEST]fts_test_func_init:init test function
+[    6.956695] [FTS_TS/I][TEST]fts_test_func_init:match test function,type:2
+[    6.963508] [FTS_TS][TEST]fts_test_init:sysfs(test) create successfully
+[    6.970113] [FTS_TS][TEST]fts_test_init: Exit(2048)
+[    6.975007] [FTS_TS/I]fts_irq_registration:irq:93, flag:2002
+[    6.980819] [FTS_TS/I]fts_fwupg_init:fw upgrade init function
+[    6.981287] [FTS_TS/I]fts_read_parse_touchdata:no touch point information
+[    6.993452] [FTS_TS/I]fts_fwupg_init:match upgrade function,type:2
+[    6.999633] [FTS_TS]fts_ts_probe_entry: Exit(1445)
+[    6.999643] [FTS_TS/I]fts_fwupg_work:fw upgrade work function
+[    6.999646] [FTS_TS]fts_irq_disable: Enter
+[    6.999652] [FTS_TS]fts_irq_disable: Exit(152)
+[    6.999654] [FTS_TS]fts_fwupg_get_fw_file:get upgrade fw file
+[    7.000394] fts_ts 1-0038: Direct firmware load for focaltech_ts_fw_.bin failed with error -2
+[    7.000402] [FTS_TS/I]fts_get_fw_file_via_request_firmware:firmware(focaltech_ts_fw_.bin) request fail,ret=-2
+[    7.000406] [FTS_TS/I]fts_fwupg_get_fw_file:upgrade fw file len:51060
+[    7.000410] [FTS_TS/I]fts_fwupg_auto_upgrade:********************FTS enter upgrade********************
+[    7.000412] [FTS_TS/I]fts_fwupg_upgrade:fw auto upgrade function
+[    7.000586] [FTS_TS/I]fts_wait_tp_to_valid:TP Ready, Device ID = 0x54
+[    7.000588] [FTS_TS/I]fts_fwupg_check_fw_valid:tp fw vaild
+[    7.000591] [FTS_TS/I]fts_fwupg_get_ver_in_host:fw version offset:0xc772
+[    7.000839] [FTS_TS/I]fts_fwupg_need_upgrade:fw version in tp:6, host:6
+[    7.000842] [FTS_TS/I]fts_fwupg_upgrade:fw upgrade flag:0
+[    7.000846] [FTS_TS/I]fts_fwupg_auto_upgrade:**********tp fw(app/param) no upgrade/upgrade success**********
+[    7.000848] [FTS_TS/I]fts_fwupg_auto_upgrade:********************FTS exit upgrade********************
+[    7.000850] [FTS_TS]fts_irq_enable: Enter
+[    7.000857] [FTS_TS]fts_irq_enable: Exit(168)
+[    7.122751] [FTS_TS/I]fts_ts_probe:Touch Screen(I2C BUS) driver prboe successfully
+[    7.130465] [FTS_TS]fts_ts_init: Exit(1704)
+[    7.141085] --HIADC-- Driver Version: 1.0
+[    7.145632] input: hisi_adc as /devices/virtual/input/input2
+[    7.158597] --atsha204a-- Driver Version: 1.0
+[    7.163114] --atsha204a-- I2C address: 0x64
+[    7.389093] ----GET--key:emac---emac=AC:1D:DF:68:FE:FF---------
+[    9.700862] ----GET--key:factory_recovery---factory_recovery=0---------
+[    9.759784] EXT4-fs (mmcblk0p6): mounted filesystem with ordered data mode. Opts: (null)
+[    9.803791] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[    9.869440] ----GET--key:umode---umode=0---------
+[   10.059585] start hifb_service(/dev/fb0 600 1024 8888)
+[   10.216764] ----GET--key:default_ip------------
+[   10.302343] ----GET--key:umode---umode=0---------
+[   10.366203] [FTS_TS/I]fb_notifier_callback:event(1) do not need process
+[   10.366203]
+[   10.843613] ----GET--key:umode---umode=0---------
+[   11.346815] ----GET--key:umode---umode=0---------
+[   12.922347] hisi-femac 10010000.ethernet eth0: Link is Up - 100Mbps/Full - flow control rx/tx
+[   12.930903] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[   16.566381] ----GET--key:umode---umode=0---------
+[   16.852813] [FTS_TS/I]fb_notifier_callback:FB event:16,blank:0
+[   16.852819] [FTS_TS/I]fb_notifier_callback:resume: event = 16, not care
+[   16.852819]
+[   16.852824] [FTS_TS/I]fb_notifier_callback:event(17) do not need process
+[   16.852824]
+[   21.883843] bi-app-sensepassx start
+[   21.955901] ----GET--key:umode---umode=0---------
+[   21.980548] bi-daemon-sensepassx start
+[   22.045790] ----GET--key:umode---umode=0---------
+[   45.592894] random: crng init done
+^F
+
+
+BusyBox v1.28.4 () built-in shell (ash)
+
+  _______                     ________        __
+ |       |.-----.-----.-----.|  |  |  |.----.|  |_
+ |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+ |_______||   __|_____|__|__||________||__|  |____|
+          |__| W I R E L E S S   F R E E D O M
+ -----------------------------------------------------
+ OpenWrt 19.07-SNAPSHOT, r0+11830-c989c85a96
+ -----------------------------------------------------
+root@OpenWrt:/#

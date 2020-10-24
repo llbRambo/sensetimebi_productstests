@@ -37,6 +37,7 @@ class Socket(object):
         # print(cmd)
         self.sock.send(cmd.encode())
         return self.sock.recv(1024).decode('utf-8')
+        # return self.sock.recvfrom(2048)  # .decode('utf-8')
 
     def socket_read(self):
         return self.sock.recv(1024).decode('utf-8')

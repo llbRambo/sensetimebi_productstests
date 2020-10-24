@@ -1,0 +1,13 @@
+echo "***************************************************************" >> /data/infocheck.txt
+fw_printenv |grep device_sn >> /data/infocheck.txt
+echo "***************************************************************" >> /data/infocheck.txt
+df -h /data >> /data/infocheck.txt
+echo "***************************************************************" >> /data/infocheck.txt
+cat /etc/product_info >> /data/infocheck.txt
+echo "***************************************************************" >> /data/infocheck.txt
+ps |grep service >> /data/infocheck.txt
+echo "***************************************************************" >> /data/infocheck.txt
+ps |grep app >> /data/infocheck.txt
+echo "***************************************************************" >> /data/infocheck.txt
+cat /data/process_monitor.log  >> /data/infocheck.txt
+echo "***************************************************************" >> /data/infocheck.txt

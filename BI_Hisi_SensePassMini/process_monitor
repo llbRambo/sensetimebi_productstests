@@ -1,0 +1,194 @@
+#!/bin/sh
+
+# Log file to record app process down time.
+LOG_FILE="/data/process_monitor.log"
+
+if [ ! -e $LOG_FILE ]; then
+	touch $LOG_FILE
+fi
+
+function get_product_model()
+{
+	model=$(cat /etc/product_info|grep model|cut -d '=' -f 2)
+	echo "$model"
+}
+
+model=$(get_product_model)
+
+function kill_apps()
+{
+	echo "kill_apps ......" >> /dev/kmsg
+
+	if [ "$model" = "SenseWe" ]; then
+		killall -9 app_db_service
+		killall -9 app_link_service
+		killall -9 app_aikey
+	fi
+}
+
+function restart_apps()
+{
+	echo "restart_apps ......" >> /dev/kmsg
+
+	if [ "$model" = "SenseWe" ]; then
+		cd /
+		/etc/init.d/start_sensewe_app start
+	fi
+}
+
+function restart_services()
+{
+	echo "restart_services ......" >> /dev/kmsg
+
+	killall -9 ai_service
+	killall -15 media_service
+	killall -15 camera_service
+	killall -15 device_service	
+
+	# M10 no sensor service.
+	if [ "$model" != "SenseEngine M10" ]; then
+		killall -15 sensor_service
+	fi
+
+	# M10 & M20 no fota service.
+	if [ "$model" != "SenseEngine M10" -a "$model" != "SenseEngine M20" ]; then
+		killall -15 fota_service
+	fi
+
+	sleep 1
+
+	/etc/init.d/start_device_service start
+	/etc/init.d/start_camera_service start
+	/etc/init.d/start_media_service start
+	/etc/init.d/start_ai_service start
+	
+	# M10 no sensor service.
+	if [ "$model" != "SenseEngine M10" ]; then
+		/etc/init.d/start_sensor_service start
+	fi
+
+	# M10 & M20 no fota service.
+	if [ "$model" != "SenseEngine M10" -a "$model" != "SenseEngine M20" ]; then
+		/etc/init.d/start_fota_service start
+	fi
+}
+
+function app_dead_process()
+{
+	echo "App process is dead!!!!!!" >> /dev/kmsg
+
+	date >> $LOG_FILE
+	echo "App process is dead!!!!!!" >> $LOG_FILE
+	echo -e "\n\n" >> $LOG_FILE
+
+	# Re-start related service
+	killall -15 sensor_service
+	sleep 1
+	/etc/init.d/start_sensor_service start
+
+	# Re-start app process
+	if [ "$model" = "SenseWe" ]; then
+		kill_apps
+		restart_apps
+	fi
+}
+
+while true; do
+	# Monitor 5s
+	sleep 5
+
+	# 1. App dead check.
+	# M10 & M20 not monitor app process.
+	if [ "$model" != "SenseEngine M10" -a "$model" != "SenseEngine M20" ]; then
+		if [ "$model" = "SenseWe" ]; then
+			app_rt_count=`ps | grep "app_aikey" | grep -v "grep" | wc -l`
+		else
+			app_rt_count=-1
+		fi
+
+		if [ $app_rt_count -eq 0 ]; then
+			app_dead_process
+		fi
+	fi
+
+	#2. Service dead check.
+	ai_rt_count=`ps | grep "ai_service" | grep -v "grep" | wc -l`
+	camera_rt_count=`ps | grep "camera_service" | grep -v "grep" | wc -l`
+	media_rt_count=`ps | grep "media_service" | grep -v "grep" | wc -l`
+	device_rt_count=`ps | grep "device_service" | grep -v "grep" | wc -l`
+
+	# M10 no sensor service.
+	if [ "$model" != "SenseEngine M10" ]; then
+		sensor_rt_count=`ps | grep "sensor_service" | grep -v "grep" | wc -l`
+	else
+		sensor_rt_count=-1
+	fi
+
+	# M10 & M20 no fota service.
+	if [ "$model" != "SenseEngine M10" -a "$model" != "SenseEngine M20" ]; then
+		fota_rt_count=`ps | grep "fota_service" | grep -v "grep" | wc -l`
+	else
+		fota_rt_count=-1
+	fi
+
+	# Service dead.
+	if [ $ai_rt_count -eq 0 -o $camera_rt_count -eq 0 -o $media_rt_count -eq 0 \
+			-o $device_rt_count -eq 0 -o $sensor_rt_count -eq 0 -o $fota_rt_count -eq 0 ]; then
+		if [ $ai_rt_count -eq 0 ]; then
+			echo "AI Service is dead!!!!!!" >> /dev/kmsg
+
+			date >> $LOG_FILE
+			echo "AI Service is dead!!!!!!" >> $LOG_FILE
+			echo -e "\n\n" >> $LOG_FILE
+		fi
+
+		if [ $camera_rt_count -eq 0 ]; then
+			echo "Camera Service is dead!!!!!!" >> /dev/kmsg
+
+			date >> $LOG_FILE
+			echo "Camera Service is dead!!!!!!" >> $LOG_FILE
+			echo -e "\n\n" >> $LOG_FILE
+		fi
+
+		if [ $media_rt_count -eq 0 ]; then
+			echo "Media Service is dead!!!!!!" >> /dev/kmsg
+
+			date >> $LOG_FILE
+			echo "Media Service is dead!!!!!!" >> $LOG_FILE
+			echo -e "\n\n" >> $LOG_FILE
+		fi
+
+		if [ $device_rt_count -eq 0 ]; then
+			echo "Device Service is dead!!!!!!" >> /dev/kmsg
+
+			date >> $LOG_FILE
+			echo "Device Service is dead!!!!!!" >> $LOG_FILE
+			echo -e "\n\n" >> $LOG_FILE
+		fi
+
+		if [ $sensor_rt_count -eq 0 ]; then
+			echo "Sensor Service is dead!!!!!!" >> /dev/kmsg
+
+			date >> $LOG_FILE
+			echo "Sensor Service is dead!!!!!!" >> $LOG_FILE
+			echo -e "\n\n" >> $LOG_FILE
+		fi
+
+		if [ $fota_rt_count -eq 0 ]; then
+			echo "Fota Service is dead!!!!!!" >> /dev/kmsg
+
+			date >> $LOG_FILE
+			echo "Fota Service is dead!!!!!!" >> $LOG_FILE
+			echo -e "\n\n" >> $LOG_FILE
+		fi
+		
+		# Re-start app and ai service.
+		if [ "$model" = "SenseEngine M10" -o "$model" = "SenseEngine M20" ]; then
+			restart_services
+		else
+			kill_apps
+			restart_services
+			restart_apps
+		fi
+	fi
+done

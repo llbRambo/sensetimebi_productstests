@@ -1,15 +1,15 @@
 #设备IP地址
-Host_IP: 192.168.1.100
+Host_IP: 10.9.40.150
 #SSH登陆账号
 SSH_Name: root
 #SSH登陆密码
-SSH_Password: BI_Hisi_SensePassC#
+SSH_Password: BI_SensePassXS#
 #SSH端口号
 SSH_Port: 22
 #按照顺序需要执行的命令
 #给wirte.sh文件赋予权限
-Command1: chmod 777 > /data/wirte.sh
+Command1: rm -rf /data/temp
 #在network_cfg文件第22行加入在后台运行wirte.sh脚本
-Command2: sed -i "22i ./data/wirte.sh &" /etc/init.d/network_cfg
+Command2: dd if=/dev/zero  of=/data/temp bs=1M  count=1024
 #重启设备
-Command3: reboot -f
+Command3: ls -alh /data/temp

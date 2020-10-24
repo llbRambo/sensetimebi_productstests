@@ -7,33 +7,33 @@ import os
 from sensetimebi_productstests.Sharedscript.logger import Logger
 
 if __name__ == '__main__':
-    ipport = '10.9.40.26:8888'
+    ipport = '10.9.66.151:8888'
     log = Logger('D:\\test-project\\000-testScripts\\sensetimebi_productstests\\BI_RK_SensePassPro\\rs232.txt', level='debug')  #保存脚本运行log
     d = u2.connect_adb_wifi(ipport)  # 连接安卓设备
-    d.app_start(package_name="com.sensetime.sensepass.factoryexam", activity="com.sensetime.sensepass.factoryexam.MainActivity")
+    #d.app_start(package_name="com.sensetime.sensepass.factoryexam", activity="com.sensetime.sensepass.factoryexam.MainActivity") #SelectDevActivity
+    d.app_start(package_name="com.sensetime.sensepass.factoryexam",activity="com.sensetime.sensepass.factoryexam.SelectDevActivity")
     time.sleep(3)
     uccess_count = 0
     fail_count = 0
 
+    d(resourceId="com.sensetime.sensepass.factoryexam:id/btn_dev_pass").click()
+    # d(resourceId="com.sensetime.sensepass.factoryexam:id/btn_pcba_exam").click()
     d(resourceId="com.sensetime.sensepass.factoryexam:id/btn_pcba_exam").click()
     time.sleep(2)
-    for i in range(1, 1001):
+    for i in range(1, 10001):
         log.logger.debug('——————————test%s——————————'%i)
         d.xpath('//*[@resource-id="com.sensetime.sensepass.factoryexam:id/lv_result"]/android.widget.LinearLayout[4]').click()
-        time.sleep(2)
-        d(resourceId="com.sensetime.sensepass.factoryexam:id/btn_start_exam").click()  #点击开始测试
         time.sleep(3)
         #点击第三方串口工具的“发送”按钮
         # autoit.mouse_click(button='left', x=1875, y=777, clicks=1, speed=-1)
         # time.sleep(3)
 
-        tv_receive_data = d.xpath('//*[@resource-id="com.sensetime.sensepass.factoryexam:id/tv_receive_data"]').get_text()
-        log.logger.debug(tv_receive_data)
-        flag = tv_receive_data.find('收到数据：0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31')
+        tv_receive_data = d.xpath('//*[@resource-id="com.sensetime.sensepass.factoryexam:id/tv_tips"]').get_text()
+        # log.logger.debug(tv_receive_data)
+        flag = tv_receive_data.find('4.RS232测试成功')
         if flag != -1:
             log.logger.debug('测试成功')
-            d(resourceId="com.sensetime.sensepass.factoryexam:id/iv_test_pass").click()  # da打勾
-            time.sleep(2)
+            time.sleep(5)
             d(resourceId="com.android.systemui:id/back").click()  # 点击系统返回键
             time.sleep(2)
             uccess_count += 1
