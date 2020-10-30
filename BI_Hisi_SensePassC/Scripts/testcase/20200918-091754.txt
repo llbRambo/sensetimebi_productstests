@@ -1,0 +1,72 @@
+***************************************************************
+device_sn=PS31HD01GC20D90026
+***************************************************************
+Filesystem                Size      Used Available Use% Mounted on
+/dev/mmcblk0p6           12.3G    168.9M     11.5G   1% /data
+***************************************************************
+software_version=V2.5.3
+hardware_version=PassCV1
+model=SensePass-C
+vendor=SenseTime
+
+BUILD_TIME=2020-09-10_09:10:42 UTC
+***************************************************************
+ 1206 root     25220 S    hifb_service /dev/fb0 600 1024 8888
+ 1252 root     23088 S    device_service
+ 1256 root     61536 S    camera_service
+ 1312 root      535m S    ai_service
+ 1314 root     44744 S    fota_service
+ 1316 root     40020 S    media_service
+ 1360 root     12388 S    sensor_service
+ 1522 root     14936 S    cmd_service -u
+ 4720 root      3004 S    ash -c ps |grep service >> /data/20200918-091754.txt
+ 4722 root      3004 S    grep service
+***************************************************************
+ 1639 root      379m S    /usr/bin/sensepassx-app
+ 4772 root      3004 S    ash -c ps |grep app >> /data/20200918-091754.txt
+ 4774 root      3004 S    grep app
+***************************************************************
+fjajfsfa
+
+ sensepassx-app is dead!!!
+
+Wed Sep 16 15:19:14 CST 2020
+ 1072 root     25220 S    hifb_service /dev/fb0 600 1024 8888
+ 1118 root     23088 S    device_service
+ 1121 root     61536 S    camera_service
+ 1177 root      662m S    ai_service
+ 1180 root     44744 S    fota_service
+ 1182 root     40020 S    media_service
+ 1209 root     12388 S    sensor_service
+ 1328 root     14936 S    cmd_service -u
+ 3766 root      3004 S    grep service
+ 3768 root      3004 S    grep app
+
+ sensepassx-app is dead!!!
+
+Wed Sep 16 15:20:50 CST 2020
+ 1080 root     25220 S    hifb_service /dev/fb0 600 1024 8888
+ 1126 root     23088 S    device_service
+ 1129 root     61536 S    camera_service
+ 1183 root      654m S    ai_service
+ 1186 root     44744 S    fota_service
+ 1188 root     38996 S    media_service
+ 1218 root     12388 S    sensor_service
+ 1398 root     14936 S    cmd_service -u
+ 2560 root      3004 S    grep service
+ 2562 root      3004 S    grep app
+
+ sensepassx-app is dead!!!
+
+Wed Sep 16 15:27:49 CST 2020
+ 1100 root     25220 S    hifb_service /dev/fb0 600 1024 8888
+ 1146 root     23088 S    device_service
+ 1149 root     61536 S    camera_service
+ 1204 root      659m S    ai_service
+ 1207 root     44744 S    fota_service
+ 1209 root     38996 S    media_service
+ 1238 root     20580 S    sensor_service
+ 1418 root     14936 S    cmd_service -u
+ 6111 root      3004 S    grep service
+ 6113 root      3004 S    grep app
+***************************************************************

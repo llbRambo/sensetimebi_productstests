@@ -1,0 +1,29 @@
+***************************************************************
+device_sn=PS31HD01GC20B00083
+***************************************************************
+Filesystem                Size      Used Available Use% Mounted on
+/dev/mmcblk0p6           12.3G     11.1G    601.6M  95% /data
+***************************************************************
+software_version=V2.5.2
+hardware_version=PassCV1
+model=SensePass-C
+vendor=SenseTime
+
+BUILD_TIME=2020-08-28_12:35:50 UTC
+***************************************************************
+ 1135 root     25220 S    hifb_service /dev/fb0 600 1024 8888
+ 1181 root     23088 S    device_service
+ 1187 root     61536 S    camera_service
+ 1239 root      528m S    ai_service
+ 1242 root     44744 S    fota_service
+ 1245 root     38996 S    media_service
+ 1273 root     12388 S    sensor_service
+ 1436 root     14936 S    cmd_service -u
+12881 root      3004 S    ash -c ps |grep service >> /data/20200910-193806.txt
+12883 root      3004 S    grep service
+***************************************************************
+ 1515 root      380m S    /usr/bin/sensepassx-app
+12925 root      3004 S    ash -c ps |grep app >> /data/20200910-193806.txt
+12927 root      3004 S    grep app
+***************************************************************
+***************************************************************

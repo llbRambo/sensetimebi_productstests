@@ -1,0 +1,359 @@
+[2020-06-17 16:24:50,027][DEBUG]: ----------test No.1----------
+[2020-06-17 16:24:50,125][DEBUG]: flag set up success!!!
+[2020-06-17 16:27:47,478][DEBUG]: ----------test No.1----------
+[2020-06-17 16:27:47,606][DEBUG]: flag set up success!!!
+[2020-06-17 16:30:22,191][DEBUG]: ----------test No.1----------
+[2020-06-17 16:30:22,341][DEBUG]: flag set up success!!!
+[2020-06-17 16:34:00,867][DEBUG]: ----------test No.1----------
+[2020-06-17 16:34:00,961][DEBUG]: flag set up success!!!
+[2020-06-17 16:39:19,014][DEBUG]: ----------test No.1----------
+[2020-06-17 16:39:19,140][DEBUG]: flag set up success!!!
+[2020-06-17 16:51:56,387][DEBUG]: ----------test No.1----------
+[2020-06-17 16:52:24,515][DEBUG]: ----------test No.1----------
+[2020-06-17 16:52:24,557][DEBUG]: flag set up success!!!
+[2020-06-17 16:52:24,605][DEBUG]: waiting upgrade...
+[2020-06-17 16:55:49,902][DEBUG]: ----------test No.1----------
+[2020-06-17 16:55:49,947][DEBUG]: flag set up success!!!
+[2020-06-17 16:55:50,002][DEBUG]: waiting upgrade...
+[2020-06-17 16:57:33,966][DEBUG]: U disk upgrade success!!!
+[2020-06-17 16:57:33,966][DEBUG]: ----------test No.2----------
+[2020-06-17 16:57:34,050][DEBUG]: flag set up fail!!!
+[2020-06-17 16:57:34,086][DEBUG]: waiting upgrade...
+[2020-06-17 16:59:18,080][DEBUG]: U disk upgrade success!!!
+[2020-06-17 17:00:41,779][DEBUG]: ----------test No.1----------
+[2020-06-17 17:00:41,819][DEBUG]: flag set up fail!!!
+[2020-06-17 17:00:41,833][DEBUG]: waiting upgrade...
+[2020-06-17 17:02:25,773][DEBUG]: U disk upgrade success!!!
+[2020-06-17 17:02:28,773][DEBUG]: ----------test No.2----------
+[2020-06-17 17:02:28,842][DEBUG]: flag set up success!!!
+[2020-06-17 17:02:28,900][DEBUG]: waiting upgrade...
+[2020-06-17 17:04:20,955][DEBUG]: U disk upgrade success!!!
+[2020-06-17 17:05:01,791][DEBUG]: ----------test No.1----------
+[2020-06-17 17:05:07,805][DEBUG]: U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:05:07,805][DEBUG]: flag set up success!!!
+[2020-06-17 17:05:10,814][DEBUG]: waiting upgrade...
+[2020-06-17 17:06:57,739][DEBUG]: software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:06:57,739][DEBUG]: U disk upgrade success!!!
+[2020-06-17 17:06:57,739][DEBUG]: ----------test No.2----------
+[2020-06-17 17:07:03,751][DEBUG]: U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:07:03,751][DEBUG]: flag set up success!!!
+[2020-06-17 17:07:06,755][DEBUG]: waiting upgrade...
+[2020-06-17 17:08:53,731][DEBUG]: software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:08:53,731][DEBUG]: U disk upgrade success!!!
+[2020-06-17 17:10:21,734][DEBUG]: ----------test No.1----------
+[2020-06-17 17:10:27,747][DEBUG]: U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:10:27,747][DEBUG]: flag set up success!!!
+[2020-06-17 17:10:30,755][DEBUG]: waiting upgrade...
+[2020-06-17 17:12:17,838][DEBUG]: software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:12:17,838][DEBUG]: U disk upgrade success!!!
+[2020-06-17 17:12:17,838][DEBUG]: ----------test No.2----------
+[2020-06-17 17:12:23,852][DEBUG]: U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:12:23,852][DEBUG]: flag set up success!!!
+[2020-06-17 17:12:26,856][DEBUG]: waiting upgrade...
+[2020-06-17 17:14:04,423][DEBUG]: ----------test No.1----------
+[2020-06-17 17:14:10,470][DEBUG]: flag set up success!!!
+[2020-06-17 17:14:13,479][DEBUG]: waiting upgrade...
+[2020-06-17 17:16:00,364][DEBUG]: U disk upgrade success!!!
+[2020-06-17 17:16:00,364][DEBUG]: ----------test No.2----------
+[2020-06-17 17:16:06,379][DEBUG]: flag set up success!!!
+[2020-06-17 17:16:09,386][DEBUG]: waiting upgrade...
+[2020-06-17 17:18:10,833][DEBUG]: ----------test No.1----------
+[2020-06-17 17:18:16,848][DEBUG]: U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:18:16,848][DEBUG]: flag set up success!!!
+[2020-06-17 17:18:19,856][DEBUG]: waiting upgrade...
+[2020-06-17 17:20:06,884][DEBUG]: software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:20:06,884][DEBUG]: U disk upgrade success!!!
+[2020-06-17 17:20:06,884][DEBUG]: ----------test No.2----------
+[2020-06-17 17:20:12,897][DEBUG]: U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:20:12,897][DEBUG]: flag set up success!!!
+[2020-06-17 17:20:15,909][DEBUG]: waiting upgrade...
+[2020-06-17 17:22:02,758][DEBUG]: software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:22:02,758][DEBUG]: U disk upgrade success!!!
+[2020-06-17 17:22:02,758][DEBUG]: ----------test No.3----------
+[2020-06-17 17:22:08,769][DEBUG]: U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:22:08,769][DEBUG]: flag set up success!!!
+[2020-06-17 17:22:11,772][DEBUG]: waiting upgrade...
+[2020-06-17 17:23:58,732][DEBUG]: software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:23:58,732][DEBUG]: U disk upgrade success!!!
+[2020-06-17 17:23:58,732][DEBUG]: ----------test No.4----------
+[2020-06-17 17:24:04,746][DEBUG]: U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:24:04,746][DEBUG]: flag set up success!!!
+[2020-06-17 17:24:07,756][DEBUG]: waiting upgrade...
+[2020-06-17 17:25:54,645][DEBUG]: software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:25:54,645][DEBUG]: U disk upgrade success!!!
+[2020-06-17 17:25:54,646][DEBUG]: ----------test No.5----------
+[2020-06-17 17:26:00,659][DEBUG]: U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:26:00,659][DEBUG]: flag set up success!!!
+[2020-06-17 17:26:03,667][DEBUG]: waiting upgrade...
+[2020-06-17 17:27:50,544][DEBUG]: software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:27:50,544][DEBUG]: U disk upgrade success!!!
+[2020-06-17 17:27:50,544][DEBUG]: ----------test No.6----------
+[2020-06-17 17:27:56,555][DEBUG]: U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:27:56,555][DEBUG]: flag set up success!!!
+[2020-06-17 17:27:59,559][DEBUG]: waiting upgrade...
+[2020-06-17 17:29:46,534][DEBUG]: software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:29:46,534][DEBUG]: U disk upgrade success!!!
+[2020-06-17 17:29:46,535][DEBUG]: ----------test No.7----------
+[2020-06-17 17:29:52,556][DEBUG]: U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:29:52,556][DEBUG]: flag set up success!!!
+[2020-06-17 17:29:55,561][DEBUG]: waiting upgrade...
+[2020-06-17 17:31:42,583][DEBUG]: software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:31:42,583][DEBUG]: U disk upgrade success!!!
+[2020-06-17 17:31:42,583][DEBUG]: ----------test No.8----------
+[2020-06-17 17:31:48,592][DEBUG]: U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:31:48,592][DEBUG]: flag set up success!!!
+[2020-06-17 17:31:51,597][DEBUG]: waiting upgrade...
+[2020-06-17 17:33:38,511][DEBUG]: software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:33:38,511][DEBUG]: U disk upgrade success!!!
+[2020-06-17 17:33:38,511][DEBUG]: ----------test No.9----------
+[2020-06-17 17:33:44,520][DEBUG]: U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:33:44,520][DEBUG]: flag set up success!!!
+[2020-06-17 17:33:47,525][DEBUG]: waiting upgrade...
+[2020-06-17 17:35:34,669][DEBUG]: software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:35:34,669][DEBUG]: U disk upgrade success!!!
+[2020-06-17 17:35:34,670][DEBUG]: ----------test No.10----------
+[2020-06-17 17:35:40,686][DEBUG]: U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:35:40,686][DEBUG]: flag set up success!!!
+[2020-06-17 17:35:43,694][DEBUG]: waiting upgrade...
+[2020-06-17 17:37:30,668][DEBUG]: software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:37:30,668][DEBUG]: U disk upgrade success!!!
+[2020-06-17 17:37:30,669][DEBUG]: ----------test No.11----------
+[2020-06-17 17:37:36,684][DEBUG]: U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:37:36,684][DEBUG]: flag set up success!!!
+[2020-06-17 17:37:39,689][DEBUG]: waiting upgrade...
+[2020-06-17 17:39:26,647][DEBUG]: software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:39:26,647][DEBUG]: U disk upgrade success!!!
+[2020-06-17 17:39:26,647][DEBUG]: ----------test No.12----------
+[2020-06-17 17:39:32,655][DEBUG]: U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:39:32,655][DEBUG]: flag set up success!!!
+[2020-06-17 17:39:35,660][DEBUG]: waiting upgrade...
+[2020-06-17 17:41:22,867][DEBUG]: software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:41:22,867][DEBUG]: U disk upgrade success!!!
+[2020-06-17 17:41:22,867][DEBUG]: ----------test No.13----------
+[2020-06-17 17:41:28,882][DEBUG]: U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:41:28,882][DEBUG]: flag set up success!!!
+[2020-06-17 17:41:31,888][DEBUG]: waiting upgrade...
+[2020-06-17 17:43:18,673][DEBUG]: U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:43:18,673][DEBUG]: U disk upgrade fail!!!
+[2020-06-17 17:43:18,673][DEBUG]: ----------test No.14----------
+[2020-06-17 17:43:24,687][DEBUG]: U disk upgrade
+U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:43:24,687][DEBUG]: flag set up success!!!
+[2020-06-17 17:43:27,691][DEBUG]: waiting upgrade...
+[2020-06-17 17:45:14,545][DEBUG]: U disk upgrade
+U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:45:14,545][DEBUG]: U disk upgrade fail!!!
+[2020-06-17 17:45:14,545][DEBUG]: ----------test No.15----------
+[2020-06-17 17:45:20,555][DEBUG]: U disk upgrade
+U disk upgrade
+U disk upgrade
+software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:45:20,555][DEBUG]: flag set up success!!!
+[2020-06-17 17:45:23,561][DEBUG]: waiting upgrade...
+[2020-06-17 17:47:10,486][DEBUG]: software_version=V2.3.32
+hardware_version=XSV2
+model=SensePassX
+vendor=SenseTime
+BUILD_TIME=2020-06-16_09:13:55 UTC
+
+[2020-06-17 17:47:10,486][DEBUG]: U disk upgrade success!!!

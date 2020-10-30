@@ -1,0 +1,10 @@
+2020-08-18 17:31:40	add com = COM1
+2020-08-18 17:31:40	add com = COM43
+2020-08-18 17:31:40	add com = COM45
+2020-08-18 17:31:40	add com = COM44
+2020-08-18 17:31:40	add com = COM17
+2020-08-18 17:31:40	add com = COM31
+2020-08-18 17:31:44	open COM31 success!
+2020-08-18 17:31:44	create the recv thread, and start recv thd rs485 data......
+2020-08-18 17:37:11	stop thread success!
+2020-08-18 17:37:11	close uart success!

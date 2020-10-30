@@ -1,0 +1,32 @@
+2020-05-29 11:11:58	add com = COM1
+2020-05-29 11:11:58	add com = COM35
+2020-05-29 11:11:58	add com = COM33
+2020-05-29 11:11:58	add com = COM30
+2020-05-29 11:11:58	add com = COM36
+2020-05-29 11:11:58	add com = COM34
+2020-05-29 11:11:58	add com = COM37
+2020-05-29 11:11:58	add com = COM31
+2020-05-29 11:12:04	open COM31 success!
+2020-05-29 11:12:04	create the recv thread, and start recv thd rs485 data......
+2020-05-29 11:12:50	recv the rs485 or rs232 data, length = 32
+2020-05-29 11:12:50	00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 
+2020-05-29 11:12:50	10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F 
+2020-05-29 11:12:50	send the data success!
+2020-05-29 11:24:24	recv the rs485 or rs232 data, length = 32
+2020-05-29 11:24:24	00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 
+2020-05-29 11:24:24	10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F 
+2020-05-29 11:24:24	send the data success!
+2020-05-29 14:27:18	stop thread success!
+2020-05-29 14:27:18	close uart success!
+2020-05-29 14:27:39	open COM31 success!
+2020-05-29 14:27:39	create the recv thread, and start recv thd rs485 data......
+2020-05-29 14:27:43	recv the rs485 or rs232 data, length = 32
+2020-05-29 14:27:43	00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 
+2020-05-29 14:27:43	10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F 
+2020-05-29 14:27:43	send the data success!
+2020-05-29 14:30:39	recv the rs485 or rs232 data, length = 32
+2020-05-29 14:30:39	00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 
+2020-05-29 14:30:39	10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F 
+2020-05-29 14:30:39	send the data success!
+2020-05-29 16:27:57	stop thread success!
+2020-05-29 16:27:57	close uart success!
